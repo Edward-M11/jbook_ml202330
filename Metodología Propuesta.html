@@ -391,7 +391,7 @@ document.write(`
 <p><strong>Preparación de datos:</strong> Antes de aplicar cualquier modelo, se realizará una exhaustiva preparación de los datos, que incluirá limpieza, normalización y selección de características relevantes.</p>
 <p><strong>División de datos:</strong> El conjunto de datos se dividirá en conjuntos de entrenamiento y prueba para evaluar la capacidad de generalización de cada modelo.</p>
 <p><strong>Entrenamiento de modelos:</strong> Se entrenarán todos los modelos mencionados anteriormente en el conjunto de entrenamiento.</p>
-<p><strong>Evaluación de modelos:</strong> Se utilizarán métricas de evaluación adecuadas para cada tipo de modelo (por ejemplo, precisión, F1-score, error cuadrático medio, etc.) en el conjunto de prueba para comparar el rendimiento de cada modelo.</p>
+<p><strong>Evaluación de modelos:</strong> Se utilizarán métricas de evaluación adecuadas para cada tipo de modelo (por ejemplo, precisión, F1-score, etc.) en el conjunto de prueba para comparar el rendimiento de cada modelo.</p>
 <p><strong>Ajuste de hiperparámetros:</strong> Se ajustarán los hiperparámetros de los modelos para optimizar su rendimiento.</p>
 <p><strong>Selección del mejor modelo:</strong> Se seleccionará el modelo que demuestre el mejor rendimiento en términos de métricas de evaluación específicas y se validará su capacidad de segmentación en un conjunto de datos independiente si es posible.</p>
 <p><strong>Implementación en producción:</strong> Una vez seleccionado el mejor modelo, se implementará en la producción para llevar a cabo la segmentación de clientes de manera efectiva.</p>
@@ -402,10 +402,10 @@ document.write(`
 <h1>Colección y Preparación de datos<a class="headerlink" href="#coleccion-y-preparacion-de-datos" title="Permalink to this heading">#</a></h1>
 <p>Los datos se obtienen a partir de una consulta que se raliza directamente en la base de datos. Para poder evaluar la segmentación, los Clientes deben cumplir los siguientes requerimientos:</p>
 <ul class="simple">
-<li><p>Haber realizado ventas en los últimos dos años.</p></li>
+<li><p>Haber realizado compras en los últimos dos años.</p></li>
 <li><p>Que la colocación total sea mayor o igual que $100,000 COP.</p></li>
 </ul>
-<p>La empresa cuenta con 465.111 Clientes que cumplen con los requerimientos mencionados anteriormente. A continuación se muestra las
+<p>La empresa cuenta con 435.917 Clientes que cumplen con los requerimientos mencionados anteriormente. A continuación se muestra las
 distribuciones de datos de estos Clientes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -761,7 +761,7 @@ dtype: float64
 <p>Realizamos un análisis a las variables del Dataframe:
 <strong>Edad</strong>: Se puede verificar el promedio de los usuarios que compran, teniendo un media de 56 años, podmeos observar datos atípicos como la edad máxima de 124 años.
 <strong>Estrato</strong>: La gran mayoría de usuarios se concentra en los estratos 1 y 2.
-<strong>Recency</strong>: Tengo una Recencia entre 0 y 103 agrupandose en 20 - 40.
+<strong>Recency</strong>: Tiene una Recencia entre 0 y 103 agrupandose en 20 - 40.
 <strong>Frecuency</strong>: Se agrupan entre 1 - 4, teniendo datos atípicos fuera de la media.
 <strong>Monetario</strong>: Se agrupan entre 2M - 4M, teniendo datos atípicos fuera de la media.</p>
 <div class="cell docutils container">

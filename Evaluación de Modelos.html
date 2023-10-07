@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Descripción de los modelos a evaluar &#8212; segmentación de clientes</title>
+    <title>Evaluación de Modelos &#8212; segmentación de clientes</title>
   
   
   
@@ -65,7 +65,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Evaluación de Modelos';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Resultados" href="Resultados%20-%20Conclusiones.html" />
     <link rel="prev" title="Propuesta Desarrollada" href="Metodolog%C3%ADa%20Propuesta.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -167,13 +166,11 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Resumen.html">Resumen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Metodolog%C3%ADa%20Propuesta.html">Propuesta Desarrollada</a></li>
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Descripción de los modelos a evaluar</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="Resultados%20-%20Conclusiones.html">Resultados</a></li>
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Evaluación de Modelos</a></li>
 </ul>
 
     </div>
@@ -357,7 +354,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Descripción de los modelos a evaluar</h1>
+    <h1>Evaluación de Modelos</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -367,14 +364,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Descripción de los modelos a evaluar</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluacion-de-modelos">Evaluación de Modelos</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k-means-para-clasificacion">K-MEANS PARA CLASIFICACIÓN</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-clasificacion">MODELOS DE CLASIFICACIÓN</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -385,18 +377,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="descripcion-de-los-modelos-a-evaluar">
-<h1>Descripción de los modelos a evaluar<a class="headerlink" href="#descripcion-de-los-modelos-a-evaluar" title="Permalink to this heading">#</a></h1>
-<p><strong>K-NN (K-Nearest Neighbors):</strong> Este algoritmo clasifica un punto de datos en función de la mayoría de los puntos de datos cercanos a él. Es especialmente útil para la segmentación basada en similitud.</p>
-<p><strong>Decision Tree (Árbol de Decisión):</strong> Los árboles de decisión dividen los datos en función de reglas de decisión en forma de un árbol. Son fáciles de interpretar y pueden utilizarse para segmentaciones claras basadas en reglas.</p>
-<p><strong>Random Forest (Bosque Aleatorio):</strong> Un conjunto de árboles de decisión que trabajan juntos para mejorar la precisión y reducir el sobreajuste. Puede ser útil para una segmentación robusta.</p>
-<p><strong>XGBoost (Extreme Gradient Boosting):</strong> Un algoritmo de aumento de gradientes extremos que se utiliza para tareas de segmentación y predicción. Es conocido por su alta eficacia y capacidad de manejar grandes conjuntos de datos.</p>
-<p><strong>AdaBoost Regressor (AdaBoost con Regresión):</strong> Utilizado para problemas de regresión, el algoritmo AdaBoost mejora gradualmente el rendimiento combinando múltiples modelos más simples.</p>
-<p><strong>AdaBoost Classifier (AdaBoost con Clasificación):</strong> Similar al AdaBoost Regressor, pero utilizado para problemas de clasificación.</p>
-<p><strong>Extra Trees Regressor:</strong> Una variante de Random Forest que agrega más aleatoriedad a la construcción de árboles, lo que puede llevar a una mayor robustez y generalización.</p>
-<p><strong>Gradient Booster Regressor:</strong> Este algoritmo entrena modelos en secuencia, donde cada modelo se ajusta a los errores del anterior, mejorando gradualmente el rendimiento en la predicción y la segmentación.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="evaluacion-de-modelos">
+  <section class="tex2jax_ignore mathjax_ignore" id="evaluacion-de-modelos">
 <h1>Evaluación de Modelos<a class="headerlink" href="#evaluacion-de-modelos" title="Permalink to this heading">#</a></h1>
 <section id="k-means-para-clasificacion">
 <h2>K-MEANS PARA CLASIFICACIÓN<a class="headerlink" href="#k-means-para-clasificacion" title="Permalink to this heading">#</a></h2>
@@ -416,7 +397,7 @@ document.write(`
 </div>
 <ol class="arabic simple" start="2">
 <li><p>Las variables Frecuencia, y Monetario se escalan en un rango discreto de 1 a 5, 1 siendo el mas bajo, y 5 siendo el mas alto. Esto se hace por medio de segmentación en cuantiles (20%, 40%, 60%, 80%, 100%).</p></li>
-<li><p>La variable Recencia se escala, similar a Frecuencia y Monetario, en un rango discreto de 1 a 5, 1 siendo el mas reciente, y 5 siendo el menos reciente.</p></li>
+<li><p>La variable Recencia se escala, similar a Frecuencia y Monetario, en un rango discreto de 1 a 5, siendo 1 el mas reciente, y siendo 5 el menos reciente.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1121,54 +1102,19 @@ memory usage: 13.1 MB
 </section>
 <section id="modelos-de-clasificacion">
 <h2>MODELOS DE CLASIFICACIÓN<a class="headerlink" href="#modelos-de-clasificacion" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
-
-<span class="c1"># Supongamos que &quot;Cluster&quot; es la variable objetivo y las demás columnas son características.</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Cluster&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Eliminar la columna &quot;Cluster&quot; del DataFrame para obtener las características</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Cluster&quot;</span><span class="p">]</span>  <span class="c1"># La columna &quot;Cluster&quot; es la variable objetivo</span>
-
-<span class="c1"># Dividir los datos en conjuntos de entrenamiento y prueba</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-
-<span class="c1"># Crear y entrenar el modelo K-NN (en este ejemplo, se utiliza k=3 como valor de vecinos)</span>
-<span class="n">knn_model</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">knn_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-
-<span class="c1"># Realizar predicciones en el conjunto de prueba</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="n">knn_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-
-<span class="c1"># Calcular la precisión del modelo</span>
-<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Precisión del modelo K-NN:&quot;</span><span class="p">,</span> <span class="n">accuracy</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Precisión del modelo K-NN: 0.2886025485868869
-</pre></div>
-</div>
-</div>
-</div>
+<p><strong>K-NN (K-Nearest Neighbors):</strong> Este algoritmo clasifica un punto de datos en función de la mayoría de los puntos de datos cercanos a él. Es especialmente útil para la segmentación basada en similitud.</p>
+<p><strong>Decision Tree (Árbol de Decisión):</strong> Los árboles de decisión dividen los datos en función de reglas de decisión en forma de un árbol. Son fáciles de interpretar y pueden utilizarse para segmentaciones claras basadas en reglas.</p>
+<p><strong>Random Forest (Bosque Aleatorio):</strong> Un conjunto de árboles de decisión que trabajan juntos para mejorar la precisión y reducir el sobreajuste. Puede ser útil para una segmentación robusta.</p>
+<p><strong>XGBoost (Extreme Gradient Boosting):</strong> Un algoritmo de aumento de gradientes extremos que se utiliza para tareas de segmentación y predicción. Es conocido por su alta eficacia y capacidad de manejar grandes conjuntos de datos.</p>
+<p><strong>AdaBoost Classifier (AdaBoost con Clasificación):</strong> Similar al AdaBoost Regressor, pero utilizado para problemas de clasificación.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
-
-
-<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Cluster&#39;</span><span class="p">])</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Cluster&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Cluster&#39;</span><span class="p">]</span>
 
-
-<span class="n">label_encoder</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
-<span class="n">y_encoded</span> <span class="o">=</span> <span class="n">label_encoder</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-
-<span class="c1"># Dividir los datos en conjuntos de train y test</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y_encoded</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="c1"># Separamos el conjunto de datos en Train y Test</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1182,7 +1128,7 @@ memory usage: 13.1 MB
 <span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">AdaBoostClassifier</span>
 
 
-<span class="c1"># Definir los modelos</span>
+<span class="c1"># Se definen los modelos a evaluar</span>
 <span class="n">knn_model</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">()</span>
 <span class="n">tree_model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
 <span class="n">rf_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
@@ -1192,14 +1138,15 @@ memory usage: 13.1 MB
 </div>
 </div>
 </div>
+<p>El uso de pipelines facilita la experimentación y garantiza resultados reproducibles y coherentes. Cada pipeline encapsula el flujo de trabajo específico de un modelo, lo que facilita la gestión y la iteración en el desarrollo de modelos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
 
-<span class="c1"># Crear pipelines para cada modelo</span>
+<span class="c1"># Se crean pipelines para cada modelo</span>
 <span class="n">knn_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
-    <span class="p">(</span><span class="s1">&#39;scaler&#39;</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">()),</span>  <span class="c1"># Escalar las características para K-NN</span>
+    <span class="p">(</span><span class="s1">&#39;scaler&#39;</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">()),</span> 
     <span class="p">(</span><span class="s1">&#39;knn&#39;</span><span class="p">,</span> <span class="n">knn_model</span><span class="p">)</span>
 <span class="p">])</span>
 
@@ -1221,11 +1168,12 @@ memory usage: 13.1 MB
 </div>
 </div>
 </div>
+<p>La selección adecuada de los hiperparámetros es crucial para obtener un rendimiento óptimo de los modelos. Esto implica comprender cómo afectan los hiperparámetros al comportamiento del modelo, realizar búsquedas sistemáticas para encontrar los valores óptimos y adaptar los hiperparámetros a las características específicas del problema.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
 
-<span class="c1"># Definir los hiperparámetros a buscar para cada modelo</span>
+<span class="c1"># Se definen los hiperparámetros a buscar para cada modelo</span>
 <span class="n">param_grid_knn</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;knn__n_neighbors&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
     <span class="s1">&#39;knn__weights&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;uniform&#39;</span><span class="p">,</span> <span class="s1">&#39;distance&#39;</span><span class="p">]</span>
@@ -1262,7 +1210,7 @@ memory usage: 13.1 MB
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Realizar la búsqueda de hiperparámetros y validación cruzada para cada modelo</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Se realiza la búsqueda de hiperparámetros y validación cruzada para cada modelo</span>
 <span class="n">grid_search_knn</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">knn_pipeline</span><span class="p">,</span> <span class="n">param_grid_knn</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">)</span>
 <span class="n">grid_search_tree</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">tree_pipeline</span><span class="p">,</span> <span class="n">param_grid_tree</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">)</span>
 <span class="n">grid_search_rf</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">rf_pipeline</span><span class="p">,</span> <span class="n">param_grid_rf</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">)</span>
@@ -1274,7 +1222,7 @@ memory usage: 13.1 MB
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ajustar los modelos a los datos de entrenamiento</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Se Ajustan los modelos a los datos de entrenamiento</span>
 <span class="n">grid_search_knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 <span class="n">grid_search_tree</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 <span class="n">grid_search_rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
@@ -1390,6 +1338,182 @@ memory usage: 13.1 MB
 <img alt="_images/61037b97af43067689c4eed86f4dcabebeedbb3b448c4c292772ff27bfa32452.png" src="_images/61037b97af43067689c4eed86f4dcabebeedbb3b448c4c292772ff27bfa32452.png" />
 </div>
 </div>
+<p>Se realiza validación cruzada para verificar la</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">StratifiedKFold</span>
+
+<span class="c1"># Crear una instancia de StratifiedKFold para la validación cruzada</span>
+<span class="n">stratified_cv</span> <span class="o">=</span> <span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Se realiza la búsqueda de hiperparámetros y validación cruzada para cada modelo</span>
+<span class="n">grid_search_knn</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">knn_pipeline</span><span class="p">,</span> <span class="n">param_grid_knn</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">stratified_cv</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">)</span>
+<span class="n">grid_search_tree</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">tree_pipeline</span><span class="p">,</span> <span class="n">param_grid_tree</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">stratified_cv</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">)</span>
+<span class="n">grid_search_rf</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">rf_pipeline</span><span class="p">,</span> <span class="n">param_grid_rf</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">stratified_cv</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">)</span>
+<span class="n">grid_search_xgb</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">xgb_pipeline</span><span class="p">,</span> <span class="n">param_grid_xgb</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">stratified_cv</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">)</span>
+<span class="n">grid_search_adaboost_classifier</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">adaboost_classifier_pipeline</span><span class="p">,</span> <span class="n">param_grid_adaboost_classifier</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">stratified_cv</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">)</span>
+
+<span class="c1"># Se Ajustan los modelos a los datos de entrenamiento</span>
+<span class="n">grid_search_knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">grid_search_tree</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">grid_search_rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">grid_search_xgb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">grid_search_adaboost_classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-3 {color: black;}#sk-container-id-3 pre{padding: 0;}#sk-container-id-3 div.sk-toggleable {background-color: white;}#sk-container-id-3 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-3 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-3 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-3 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-3 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-3 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-3 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-3 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-3 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-3 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-3 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-3 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-3 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-3 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-3 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-3 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-3 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-3 div.sk-item {position: relative;z-index: 1;}#sk-container-id-3 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-3 div.sk-item::before, #sk-container-id-3 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-3 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-3 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-3 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-3 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-3 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-3 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-3 div.sk-label-container {text-align: center;}#sk-container-id-3 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-3 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-3" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>GridSearchCV(cv=StratifiedKFold(n_splits=5, random_state=42, shuffle=True),
+             estimator=Pipeline(steps=[(&#x27;adaboost_classifier&#x27;,
+                                        AdaBoostClassifier())]),
+             param_grid={&#x27;adaboost_classifier__learning_rate&#x27;: [0.01, 0.1, 0.2],
+                         &#x27;adaboost_classifier__n_estimators&#x27;: [50, 100, 200]},
+             scoring=&#x27;roc_auc&#x27;)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-5" type="checkbox" ><label for="sk-estimator-id-5" class="sk-toggleable__label sk-toggleable__label-arrow">GridSearchCV</label><div class="sk-toggleable__content"><pre>GridSearchCV(cv=StratifiedKFold(n_splits=5, random_state=42, shuffle=True),
+             estimator=Pipeline(steps=[(&#x27;adaboost_classifier&#x27;,
+                                        AdaBoostClassifier())]),
+             param_grid={&#x27;adaboost_classifier__learning_rate&#x27;: [0.01, 0.1, 0.2],
+                         &#x27;adaboost_classifier__n_estimators&#x27;: [50, 100, 200]},
+             scoring=&#x27;roc_auc&#x27;)</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-6" type="checkbox" ><label for="sk-estimator-id-6" class="sk-toggleable__label sk-toggleable__label-arrow">estimator: Pipeline</label><div class="sk-toggleable__content"><pre>Pipeline(steps=[(&#x27;adaboost_classifier&#x27;, AdaBoostClassifier())])</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-7" type="checkbox" ><label for="sk-estimator-id-7" class="sk-toggleable__label sk-toggleable__label-arrow">AdaBoostClassifier</label><div class="sk-toggleable__content"><pre>AdaBoostClassifier()</pre></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">,</span> <span class="n">roc_auc_score</span>
+
+<span class="c1"># Función para calcular y registrar las métricas</span>
+<span class="k">def</span> <span class="nf">evaluate_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">):</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+    <span class="n">precision</span> <span class="o">=</span> <span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
+    <span class="n">recall</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
+    <span class="n">f1</span> <span class="o">=</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
+    <span class="n">auc</span> <span class="o">=</span> <span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">),</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">,</span> <span class="n">multi_class</span><span class="o">=</span><span class="s1">&#39;ovr&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">precision</span><span class="p">,</span> <span class="n">recall</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span> <span class="n">auc</span>
+
+<span class="c1"># Evaluar cada modelo</span>
+<span class="n">knn_metrics</span> <span class="o">=</span> <span class="n">evaluate_model</span><span class="p">(</span><span class="n">grid_search_knn</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">tree_metrics</span> <span class="o">=</span> <span class="n">evaluate_model</span><span class="p">(</span><span class="n">grid_search_tree</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">rf_metrics</span> <span class="o">=</span> <span class="n">evaluate_model</span><span class="p">(</span><span class="n">grid_search_rf</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">xgb_metrics</span> <span class="o">=</span> <span class="n">evaluate_model</span><span class="p">(</span><span class="n">grid_search_xgb</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">adaboost_classifier_metrics</span> <span class="o">=</span> <span class="n">evaluate_model</span><span class="p">(</span><span class="n">grid_search_adaboost_classifier</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Registrar resultados</span>
+<span class="n">results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Modelo&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;K-NN&#39;</span><span class="p">,</span> <span class="s1">&#39;Decision Tree&#39;</span><span class="p">,</span> <span class="s1">&#39;Random Forest&#39;</span><span class="p">,</span> <span class="s1">&#39;XGBoost&#39;</span><span class="p">,</span> <span class="s1">&#39;AdaBoost Classifier&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Precisión&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">knn_metrics</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">tree_metrics</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rf_metrics</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xgb_metrics</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">adaboost_classifier_metrics</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
+    <span class="s1">&#39;Recall&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">knn_metrics</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">tree_metrics</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">rf_metrics</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">xgb_metrics</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">adaboost_classifier_metrics</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
+    <span class="s1">&#39;F1_Score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">knn_metrics</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">tree_metrics</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">rf_metrics</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">xgb_metrics</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">adaboost_classifier_metrics</span><span class="p">[</span><span class="mi">2</span><span class="p">]],</span>
+    <span class="s1">&#39;AUC&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">knn_metrics</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">tree_metrics</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">rf_metrics</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">xgb_metrics</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">adaboost_classifier_metrics</span><span class="p">[</span><span class="mi">3</span><span class="p">]]</span>
+<span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">results_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                Modelo  Precisión    Recall  F1_Score       AUC
+0                 K-NN   0.999858  0.999858  0.999858  0.999981
+1        Decision Tree   1.000000  1.000000  1.000000  1.000000
+2        Random Forest   1.000000  1.000000  1.000000  1.000000
+3              XGBoost   0.960014  0.959386  0.958583  0.997397
+4  AdaBoost Classifier   0.920794  0.917408  0.917675  0.986045
+</pre></div>
+</div>
+</div>
+</div>
+<p>Se escoge el mejor modelo, según el AUC:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Encuentra el mejor modelo según AUC</span>
+<span class="n">best_model_name</span> <span class="o">=</span> <span class="n">results_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;AUC&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()][</span><span class="s1">&#39;Modelo&#39;</span><span class="p">]</span>
+<span class="n">best_model</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># Encuentra el modelo correspondiente al mejor modelo</span>
+<span class="k">if</span> <span class="n">best_model_name</span> <span class="o">==</span> <span class="s1">&#39;K-NN&#39;</span><span class="p">:</span>
+    <span class="n">best_model</span> <span class="o">=</span> <span class="n">grid_search_knn</span><span class="o">.</span><span class="n">best_estimator_</span>
+<span class="k">elif</span> <span class="n">best_model_name</span> <span class="o">==</span> <span class="s1">&#39;Decision Tree&#39;</span><span class="p">:</span>
+    <span class="n">best_model</span> <span class="o">=</span> <span class="n">grid_search_tree</span><span class="o">.</span><span class="n">best_estimator_</span>
+<span class="k">elif</span> <span class="n">best_model_name</span> <span class="o">==</span> <span class="s1">&#39;Random Forest&#39;</span><span class="p">:</span>
+    <span class="n">best_model</span> <span class="o">=</span> <span class="n">grid_search_rf</span><span class="o">.</span><span class="n">best_estimator_</span>
+<span class="k">elif</span> <span class="n">best_model_name</span> <span class="o">==</span> <span class="s1">&#39;XGBoost&#39;</span><span class="p">:</span>
+    <span class="n">best_model</span> <span class="o">=</span> <span class="n">grid_search_xgb</span><span class="o">.</span><span class="n">best_estimator_</span>
+<span class="k">elif</span> <span class="n">best_model_name</span> <span class="o">==</span> <span class="s1">&#39;AdaBoost Classifier&#39;</span><span class="p">:</span>
+    <span class="n">best_model</span> <span class="o">=</span> <span class="n">grid_search_adaboost_classifier</span><span class="o">.</span><span class="n">best_estimator_</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">best_model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pipeline(steps=[(&#39;tree&#39;, DecisionTreeClassifier())])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Se prueba con un nuevo conjunto de datos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_registros_a_seleccionar</span> <span class="o">=</span> <span class="mi">60000</span>
+<span class="n">indices_aleatorios</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">num_registros_a_seleccionar</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_seleccionados</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">indices_aleatorios</span><span class="p">]</span>
+<span class="n">y_seleccionados</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">indices_aleatorios</span><span class="p">]</span>
+<span class="n">nuevo_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_seleccionados</span><span class="p">,</span> <span class="n">y_seleccionados</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Cargar el nuevo conjunto de datos (reemplaza &#39;X_new&#39; y &#39;y_new&#39; con tus datos)</span>
+<span class="n">X_new</span> <span class="o">=</span> <span class="n">nuevo_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Cluster&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y_new</span> <span class="o">=</span> <span class="n">nuevo_df</span><span class="p">[</span><span class="s1">&#39;Cluster&#39;</span><span class="p">]</span>
+
+<span class="c1"># Aplicar el mejor modelo al nuevo conjunto de datos</span>
+<span class="n">y_pred_new</span> <span class="o">=</span> <span class="n">best_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new</span><span class="p">)</span>
+
+<span class="c1"># Calcular las métricas de precisión en el nuevo conjunto de datos</span>
+<span class="n">precision_new</span> <span class="o">=</span> <span class="n">precision_score</span><span class="p">(</span><span class="n">y_new</span><span class="p">,</span> <span class="n">y_pred_new</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
+<span class="n">recall_new</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_new</span><span class="p">,</span> <span class="n">y_pred_new</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
+<span class="n">f1_new</span> <span class="o">=</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_new</span><span class="p">,</span> <span class="n">y_pred_new</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
+<span class="n">auc_new</span> <span class="o">=</span> <span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_new</span><span class="p">,</span> <span class="n">best_model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_new</span><span class="p">),</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">,</span> <span class="n">multi_class</span><span class="o">=</span><span class="s1">&#39;ovr&#39;</span><span class="p">)</span>
+
+<span class="c1"># Crear un DataFrame para almacenar las métricas en el nuevo conjunto de datos</span>
+<span class="n">metrics_new_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Métrica&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Precisión&#39;</span><span class="p">,</span> <span class="s1">&#39;Recall&#39;</span><span class="p">,</span> <span class="s1">&#39;F1-Score&#39;</span><span class="p">,</span> <span class="s1">&#39;AUC&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Valor&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">precision_new</span><span class="p">,</span> <span class="n">recall_new</span><span class="p">,</span> <span class="n">f1_new</span><span class="p">,</span> <span class="n">auc_new</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">metrics_new_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Métrica  Valor
+0  Precisión    1.0
+1     Recall    1.0
+2   F1-Score    1.0
+3        AUC    1.0
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -1432,15 +1556,6 @@ memory usage: 13.1 MB
         <p class="prev-next-title">Propuesta Desarrollada</p>
       </div>
     </a>
-    <a class="right-next"
-       href="Resultados%20-%20Conclusiones.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Resultados</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -1456,14 +1571,9 @@ memory usage: 13.1 MB
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Descripción de los modelos a evaluar</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluacion-de-modelos">Evaluación de Modelos</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k-means-para-clasificacion">K-MEANS PARA CLASIFICACIÓN</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-clasificacion">MODELOS DE CLASIFICACIÓN</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>

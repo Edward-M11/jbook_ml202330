@@ -4,7 +4,9 @@
 format: jb-book
 root: intro
 chapters:
+- file: Resumen
 - file: Introducción
 - file: Metodología Propuesta
 - file: Evaluación de Modelos
-- file: Resultados - Conclusiones
+- file: Resultados
+- file: Conclusiones

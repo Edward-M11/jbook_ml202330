@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Propuesta Desarrollada &#8212; My sample book</title>
+    <title>Propuesta Desarrollada &#8212; segmentación de clientes</title>
   
   
   
@@ -171,6 +171,8 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="Evaluaci%C3%B3n%20de%20Modelos.html">Descripción de los modelos a evaluar</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Resultados%20-%20Conclusiones.html">Resultados</a></li>
 
 </ul>
 
@@ -382,7 +384,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="propuesta-desarrollada">
 <h1>Propuesta Desarrollada<a class="headerlink" href="#propuesta-desarrollada" title="Permalink to this heading">#</a></h1>
-<p>La propuesta a desarrollar se enfoca en encontrar el mejor modelo de segmentación de datos, considerando la evaluación de varios algoritmos de aprendizaje automático. El objetivo principal es identificar la metodología más eficaz para dividir un conjunto de datos en grupos más pequeños y homogéneos, lo que permitirá una personalización más precisa de las estrategias de marketing y la toma de decisiones más informadas.</p>
+<p>La propuesta a desarrollar se enfoca en encontrar el mejor modelo de segmentación de datos, considerando la evaluación de varios algoritmos de aprendizaje automático. El objetivo principal es identificar la metodología más eficaz para dividir un conjunto de datos en grupos más pequeños y homogéneos, lo que permitirá una personalización más precisa de las estrategias de marketing y la toma de decisiones.
+<img alt="image.png" src="attachment:image.png" /></p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="metodologia-propuesta">
 <h1>Metodología propuesta:<a class="headerlink" href="#metodologia-propuesta" title="Permalink to this heading">#</a></h1>
@@ -410,7 +413,7 @@ distribuciones de datos de estos Clientes.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">Edward Morales</span><span class="se">\\</span><span class="s1">Downloads</span><span class="se">\\</span><span class="s1">Data.csv&#39;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;;&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">Andres</span><span class="se">\\</span><span class="s1">Downloads</span><span class="se">\\</span><span class="s1">MachingLerningUN</span><span class="se">\\</span><span class="s1">MachingLerningUN</span><span class="se">\\</span><span class="s1">jbook_ml202330</span><span class="se">\\</span><span class="s1">docs</span><span class="se">\\</span><span class="s1">Data.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -516,7 +519,7 @@ distribuciones de datos de estos Clientes.</p>
 </table>
 </div></div></div>
 </div>
-<p>Se describe un DataFrame con 10 columnas y 465.111 filas. Las columnas contienen datos de diferentes tipos, principalmente int64 (números enteros), columnas de tipo objeto (posiblemente texto u otros datos no numéricos) y float64(números decimales).</p>
+<p>Se describe un DataFrame con 10 columnas y 435.917 filas. Las columnas contienen datos de diferentes tipos, principalmente int64 (números enteros), columnas de tipo objeto (posiblemente texto u otros datos no numéricos) y float64(números decimales).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -717,33 +720,18 @@ dtype: float64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_data_NA</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
-<span class="c1"># Filtrar solo las columnas que tienen datos NA</span>
+<span class="n">all_data_NA</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
 <span class="n">all_data_NA</span> <span class="o">=</span> <span class="n">all_data_NA</span><span class="p">[</span><span class="n">all_data_NA</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="c1"># Graficar</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">all_data_NA</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">all_data_NA</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>  <span class="c1"># Rotar las etiquetas del eje x para mejor visualización</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cantidad de datos faltantes&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Columnas&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Cantidad de datos faltantes por columna&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">all_data_NA</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">all_data_NA</span> <span class="o">=</span> <span class="n">all_data_NA</span><span class="p">[</span><span class="n">all_data_NA</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># Graficar</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">all_data_NA</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">all_data_NA</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>  <span class="c1"># Rotar las etiquetas del eje x para mejor visualización</span>
-
-<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Series([], dtype: int64)
 </pre></div>
 </div>
 </div>
@@ -768,14 +756,13 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/59a2a36fde28b458440365e46a63ee269defa07ec72a4f4854bf5fdc0bd2d118.png" src="_images/59a2a36fde28b458440365e46a63ee269defa07ec72a4f4854bf5fdc0bd2d118.png" />
+<img alt="_images/c0110386d4850feb26bc5f3add24e5ab77fbb42d558ed298aed85442bb2ece49.png" src="_images/c0110386d4850feb26bc5f3add24e5ab77fbb42d558ed298aed85442bb2ece49.png" />
 </div>
 </div>
 <p>Realizamos un análisis a las variables del Dataframe:
-Para <strong>Identificación</strong>: Agrupa los datos por número de documento. No tiene mucho significado.
 <strong>Edad</strong>: Se puede verificar el promedio de los usuarios que compran, teniendo un media de 56 años, podmeos observar datos atípicos como la edad máxima de 124 años.
 <strong>Estrato</strong>: La gran mayoría de usuarios se concentra en los estratos 1 y 2.
-<strong>Recency</strong>: Tiene una Recencia entre 0 y 103 agrupandose en 20 - 40.
+<strong>Recency</strong>: Tengo una Recencia entre 0 y 103 agrupandose en 20 - 40.
 <strong>Frecuency</strong>: Se agrupan entre 1 - 4, teniendo datos atípicos fuera de la media.
 <strong>Monetario</strong>: Se agrupan entre 2M - 4M, teniendo datos atípicos fuera de la media.</p>
 <div class="cell docutils container">
@@ -783,8 +770,6 @@ Para <strong>Identificación</strong>: Agrupa los datos por número de documento
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">num_cols</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;float64&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span>
-<span class="n">num_cols</span> <span class="o">=</span> <span class="n">num_cols</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Identificacion&quot;</span><span class="p">)</span>
-
 <span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">font_scale</span><span class="o">=</span><span class="mf">1.4</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">num_cols</span><span class="p">:</span>
@@ -796,11 +781,12 @@ Para <strong>Identificación</strong>: Agrupa los datos por número de documento
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c9d523a8c04de42255665749e660af06a00369f57ac605040b7eaeee2454df5c.png" src="_images/c9d523a8c04de42255665749e660af06a00369f57ac605040b7eaeee2454df5c.png" />
-<img alt="_images/76fc4b3ca7e3350cac59c0ea075f11c172e840edf39d10ed9f183b4e4275136d.png" src="_images/76fc4b3ca7e3350cac59c0ea075f11c172e840edf39d10ed9f183b4e4275136d.png" />
-<img alt="_images/2b119ac290adca4bc1f2103c3de470d56000e52dc6e61403ff6384a86ac4ba70.png" src="_images/2b119ac290adca4bc1f2103c3de470d56000e52dc6e61403ff6384a86ac4ba70.png" />
-<img alt="_images/58173ae529530e529de6853d5822c56476188c80c32bca4018271670047246b3.png" src="_images/58173ae529530e529de6853d5822c56476188c80c32bca4018271670047246b3.png" />
-<img alt="_images/5480a91b1a4caff68c20aa0956a47ca15f590f32e1cb84a8350f0eca89b73e26.png" src="_images/5480a91b1a4caff68c20aa0956a47ca15f590f32e1cb84a8350f0eca89b73e26.png" />
+<img alt="_images/b86965639a7657b6af3989b64bf6e4f5c8f6a89b78608a059004c6d876313af5.png" src="_images/b86965639a7657b6af3989b64bf6e4f5c8f6a89b78608a059004c6d876313af5.png" />
+<img alt="_images/ac9bcdc72ddfcd1950669b85231635a232deb402c2ddb37f263dd67b28a7fd2c.png" src="_images/ac9bcdc72ddfcd1950669b85231635a232deb402c2ddb37f263dd67b28a7fd2c.png" />
+<img alt="_images/5cce7e8c36ea0957a0cbff7fde2df5a730e60453a173ae1b2ec6034f186c365d.png" src="_images/5cce7e8c36ea0957a0cbff7fde2df5a730e60453a173ae1b2ec6034f186c365d.png" />
+<img alt="_images/2722def81851a12a430b9a42a5c8632780145de93d56f746dd7c98dcd343bf27.png" src="_images/2722def81851a12a430b9a42a5c8632780145de93d56f746dd7c98dcd343bf27.png" />
+<img alt="_images/98971263998e8d20c1bf6d9908cb0ac83686e38ec7b79e37eff2d733b06c7a1f.png" src="_images/98971263998e8d20c1bf6d9908cb0ac83686e38ec7b79e37eff2d733b06c7a1f.png" />
+<img alt="_images/d6351e44bffea558019207f28bda1c937c43fac3b5ca6152dba8eeeb5611fc9a.png" src="_images/d6351e44bffea558019207f28bda1c937c43fac3b5ca6152dba8eeeb5611fc9a.png" />
 </div>
 </div>
 <p>Se analiza la distribución de usuarios por Departamento, obteniendo la mayor cantidad de usuarios en Atlántico.</p>
@@ -821,7 +807,7 @@ Para <strong>Identificación</strong>: Agrupa los datos por número de documento
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4d281874198e84a56c0ffd64ab9f1cfbdc85093c5f39961ff39a6a44f2464c0d.png" src="_images/4d281874198e84a56c0ffd64ab9f1cfbdc85093c5f39961ff39a6a44f2464c0d.png" />
+<img alt="_images/aae3153a831a33b0b9a957b1752cf556514d73093b6b89befeb3997187114022.png" src="_images/aae3153a831a33b0b9a957b1752cf556514d73093b6b89befeb3997187114022.png" />
 </div>
 </div>
 <p>La distribución de usuarios por edad, se observa que se concentran en edades adultas entre 40 - 60 años.</p>
@@ -843,7 +829,7 @@ Para <strong>Identificación</strong>: Agrupa los datos por número de documento
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/cf24a7513df430ae606ebc07d4c2800b4fdaf8ece0fff4f91d6f5797f7f7d04c.png" src="_images/cf24a7513df430ae606ebc07d4c2800b4fdaf8ece0fff4f91d6f5797f7f7d04c.png" />
+<img alt="_images/8c3e3eb51b2fb5d0133062041c42e4fcb4039944a33ed788ee33e0fabde0a821.png" src="_images/8c3e3eb51b2fb5d0133062041c42e4fcb4039944a33ed788ee33e0fabde0a821.png" />
 </div>
 </div>
 <p>La distribción por género, se identifica una concentración en el género <strong>Femenino</strong></p>
@@ -864,7 +850,7 @@ Para <strong>Identificación</strong>: Agrupa los datos por número de documento
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/32031c76b6e81a3ca45259eaf1f583528248f900b9b3f3123b35f38f629e4b51.png" src="_images/32031c76b6e81a3ca45259eaf1f583528248f900b9b3f3123b35f38f629e4b51.png" />
+<img alt="_images/20c436bd5dc90affd0f6a5d4cdd708c327094026eacd5c700b6f5d786e79c8e5.png" src="_images/20c436bd5dc90affd0f6a5d4cdd708c327094026eacd5c700b6f5d786e79c8e5.png" />
 </div>
 </div>
 <p>Como mencionaba anteriormente, por estrato tenemos una concentración en los estratos 1 y 2.</p>
@@ -885,7 +871,7 @@ Para <strong>Identificación</strong>: Agrupa los datos por número de documento
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/83805bd9315ecf9cfd143d92f3e2457c524dbe1b1be167022f159b665ceabd62.png" src="_images/83805bd9315ecf9cfd143d92f3e2457c524dbe1b1be167022f159b665ceabd62.png" />
+<img alt="_images/e8578be8222d85f1cba775a6a67cafba294002010c8265fdd9a342217d8916fb.png" src="_images/e8578be8222d85f1cba775a6a67cafba294002010c8265fdd9a342217d8916fb.png" />
 </div>
 </div>
 <p>La distribución de usuarios por Recency, tenemos una distibución asimétrica a la izquierda. Se concentra la mayor cantidad de usuarios en Recency entre 0 - 2. Se divide el grupo de datos en dos: Los que tienen menos de 48 meses activos y los que tienen más de 48 meses sin comprar que denominaremos Inactivos.</p>
@@ -908,7 +894,7 @@ Para <strong>Identificación</strong>: Agrupa los datos por número de documento
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/67c9ce99236e7f5520612a81c40e4216470f9d606fac829df59449351f793dfb.png" src="_images/67c9ce99236e7f5520612a81c40e4216470f9d606fac829df59449351f793dfb.png" />
+<img alt="_images/f0ae19584245a984438b7239b038295d0cbde5054a2f902b3cda8a3edf594f2a.png" src="_images/f0ae19584245a984438b7239b038295d0cbde5054a2f902b3cda8a3edf594f2a.png" />
 </div>
 </div>
 <p>Distirbución de Clientes por Frequency, tenemos una distribución asimétrica hacia la izquierda. Con datos concentrados entre 2 - 5.</p>
@@ -929,7 +915,7 @@ Para <strong>Identificación</strong>: Agrupa los datos por número de documento
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f9950e84bc4aced5ca5f80fd54650bbef5bc44d661bb1a2cd7ba808b83cf88ed.png" src="_images/f9950e84bc4aced5ca5f80fd54650bbef5bc44d661bb1a2cd7ba808b83cf88ed.png" />
+<img alt="_images/f4d7ec404993321587f2c9a2d56374d01daec043e3bf6da3f116dce1efc7973c.png" src="_images/f4d7ec404993321587f2c9a2d56374d01daec043e3bf6da3f116dce1efc7973c.png" />
 </div>
 </div>
 <p>Al igual que el gráfico anterior, tenemos una distribución asimétrica hacia la izquierda.</p>
@@ -950,7 +936,7 @@ Para <strong>Identificación</strong>: Agrupa los datos por número de documento
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/323042f234203463f5e3d9dd6b1f8cc3e54f738ffb5f8c65cb179269128babdb.png" src="_images/323042f234203463f5e3d9dd6b1f8cc3e54f738ffb5f8c65cb179269128babdb.png" />
+<img alt="_images/c39affac10b537f4ed2548379d6fd48d8260d0434eacb700ed4d0788fef4c89b.png" src="_images/c39affac10b537f4ed2548379d6fd48d8260d0434eacb700ed4d0788fef4c89b.png" />
 </div>
 </div>
 <p><strong>Análisis Bivariado</strong>
@@ -980,12 +966,12 @@ Con el análisis bivariado podemos comprender cómo se relacionan las variables 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2ff55b44826f53c95fda8cc5d70a642144e7702b29aee9c35f7c4e2ea33feb4b.png" src="_images/2ff55b44826f53c95fda8cc5d70a642144e7702b29aee9c35f7c4e2ea33feb4b.png" />
-<img alt="_images/57f0989e02cc86f56e91d305c255a85c4c91369d09f9a11a2008d090f46c1157.png" src="_images/57f0989e02cc86f56e91d305c255a85c4c91369d09f9a11a2008d090f46c1157.png" />
-<img alt="_images/c2b43c77e647b9968aa29f75f5add74f936a90d6cf9edebe3318301b9789c5e7.png" src="_images/c2b43c77e647b9968aa29f75f5add74f936a90d6cf9edebe3318301b9789c5e7.png" />
-<img alt="_images/12a16a2e7dd6e4bce236002cb27b55ea1fc48970b9fc0cee50225687ce7369e8.png" src="_images/12a16a2e7dd6e4bce236002cb27b55ea1fc48970b9fc0cee50225687ce7369e8.png" />
-<img alt="_images/ccd240f41428d25f63abb1b9cbadeed2765af73875006854cd43e0015861dd74.png" src="_images/ccd240f41428d25f63abb1b9cbadeed2765af73875006854cd43e0015861dd74.png" />
-<img alt="_images/b07ab86811f623dbe500983c75fef06dfa03c996422376406bb9119d99e0beef.png" src="_images/b07ab86811f623dbe500983c75fef06dfa03c996422376406bb9119d99e0beef.png" />
+<img alt="_images/fd8598945c911d8760465a409669f329bcd1e33a405ed56198f01b2288fd958f.png" src="_images/fd8598945c911d8760465a409669f329bcd1e33a405ed56198f01b2288fd958f.png" />
+<img alt="_images/5409fffa22b68a2f6739100e63010514a516e726cbab58f948be292100d44fb3.png" src="_images/5409fffa22b68a2f6739100e63010514a516e726cbab58f948be292100d44fb3.png" />
+<img alt="_images/1e149807d6bcde941e552af1b0d9e8f9bc74f040380d505fb829c1aa5c377493.png" src="_images/1e149807d6bcde941e552af1b0d9e8f9bc74f040380d505fb829c1aa5c377493.png" />
+<img alt="_images/c68bd0f5fe1a09b9952791b0daf5a98a27712273e06e1eb7de3ab32ce4aab7cb.png" src="_images/c68bd0f5fe1a09b9952791b0daf5a98a27712273e06e1eb7de3ab32ce4aab7cb.png" />
+<img alt="_images/ef723d8e2ce6acedce7a7340143b10014c245ecb03cb0446383bd1319bdc606f.png" src="_images/ef723d8e2ce6acedce7a7340143b10014c245ecb03cb0446383bd1319bdc606f.png" />
+<img alt="_images/eccb46f7760a3dee06011a6e5cc6ed3c64c80b07888d120691ed8428c115efab.png" src="_images/eccb46f7760a3dee06011a6e5cc6ed3c64c80b07888d120691ed8428c115efab.png" />
 </div>
 </div>
 </section>

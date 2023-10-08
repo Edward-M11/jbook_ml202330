@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Propuesta Desarrollada &#8212; Segmentación de Clientes &#34;Un Enfoque de Machine Learning para Estrategias de Marketing&#34;</title>
+    <title>Propuesta a Desarrollar &#8212; Segmentación de Clientes &#34;Un Enfoque de Machine Learning para Estrategias de Marketing&#34;</title>
   
   
   
@@ -141,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="Resumen.html">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -161,14 +161,16 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="Resumen.html">
-                    Segmentación de Clientes “Un Enfoque de Machine Learning para Estrategias de Marketing”
+                <a class="reference internal" href="intro.html">
+                    Segmentación Estratégica de Clientes para Crédito de Consumo
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Resumen.html">Resumen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Introducci%C3%B3n.html">Introducción</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Propuesta Desarrollada</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Propuesta a Desarrollar</a></li>
+
 
 
 <li class="toctree-l1"><a class="reference internal" href="Evaluaci%C3%B3n%20de%20Modelos.html">Evaluación de Modelos</a></li>
@@ -356,7 +358,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Propuesta Desarrollada</h1>
+    <h1>Propuesta a Desarrollar</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -366,9 +368,29 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Propuesta Desarrollada</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metodologia-propuesta">Metodología propuesta:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#coleccion-y-preparacion-de-datos">Colección y Preparación de datos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Propuesta a Desarrollar</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metodologia-propuesta">Metodología propuesta:</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coleccion-y-preparacion-de-datos-eda">Colección y Preparación de datos - EDA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escalamiento-de-variables">Escalamiento de Variables</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluacion-de-modelos">Evaluación de Modelos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k-means-modelo-no-supervisado">K-MEANS - Modelo No Supervisado</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-vif">Análisis VIF</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-clasificacion-supervisados">Modelos De Clasificación Supervisados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados-obtenidos">Resultados Obtenidos</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados">Resultados</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-confucion-modelo-tree">Matriz de confucion Modelo Tree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-confucion-modelo-k-nn">Matriz de confucion Modelo K-nn</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-confucion-modelo-xg-boost">Matriz de confucion Modelo XG Boost</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-confucion-modelo-ada-boost">Matriz de confucion Modelo ADA Boost</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-confucion-modelo-random-forest">Matriz de confucion Modelo Random forest</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -381,25 +403,26 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="propuesta-desarrollada">
-<h1>Propuesta Desarrollada<a class="headerlink" href="#propuesta-desarrollada" title="Permalink to this heading">#</a></h1>
-<p>La propuesta a desarrollar se enfoca en encontrar el mejor modelo de segmentación de datos, considerando la evaluación de varios algoritmos de aprendizaje automático. El objetivo principal es identificar la metodología más eficaz para dividir un conjunto de datos en grupos más pequeños y homogéneos, lo que permitirá una personalización más precisa de las estrategias de marketing y la toma de decisiones.
-<img alt="Descripción de la imagen" src="_images/diagrama.png" /></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="propuesta-a-desarrollar">
+<h1>Propuesta a Desarrollar<a class="headerlink" href="#propuesta-a-desarrollar" title="Permalink to this heading">#</a></h1>
+<p>La propuesta a desarrollar se enfoca en encontrar el mejor modelo de segmentación de datos, considerando la evaluación de varios algoritmos de aprendizaje automático. El objetivo principal es identificar la metodología más eficaz para dividir un conjunto de datos en grupos más pequeños y homogéneos, lo que permitirá una personalización más precisa de las estrategias de marketing y la toma de decisiones.</p>
+<p><img alt="Descripción de la imagen" src="_images/kmeans2d.png" /></p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="metodologia-propuesta">
 <h1>Metodología propuesta:<a class="headerlink" href="#metodologia-propuesta" title="Permalink to this heading">#</a></h1>
-<p><strong>Preparación de datos:</strong> Antes de aplicar cualquier modelo, se realizará una exhaustiva preparación de los datos, que incluirá limpieza, normalización y selección de características relevantes.</p>
-<p><strong>División de datos:</strong> El conjunto de datos se dividirá en conjuntos de entrenamiento y prueba para evaluar la capacidad de generalización de cada modelo.</p>
-<p><strong>Entrenamiento de modelos:</strong> Se entrenarán todos los modelos mencionados anteriormente en el conjunto de entrenamiento.</p>
-<p><strong>Evaluación de modelos:</strong> Se utilizarán métricas de evaluación adecuadas para cada tipo de modelo (por ejemplo, precisión, F1-score, etc.) en el conjunto de prueba para comparar el rendimiento de cada modelo.</p>
-<p><strong>Ajuste de hiperparámetros:</strong> Se ajustarán los hiperparámetros de los modelos para optimizar su rendimiento.</p>
-<p><strong>Selección del mejor modelo:</strong> Se seleccionará el modelo que demuestre el mejor rendimiento en términos de métricas de evaluación específicas y se validará su capacidad de segmentación en un conjunto de datos independiente si es posible.</p>
-<p><strong>Implementación en producción:</strong> Una vez seleccionado el mejor modelo, se implementará en la producción para llevar a cabo la segmentación de clientes de manera efectiva.</p>
-<p><strong>Evaluación continua:</strong> Se realizará un seguimiento continuo del modelo en producción para garantizar su eficacia a lo largo del tiempo y se considerarán ajustes si es necesario.</p>
+<ul class="simple">
+<li><p><strong>Preparación de datos:</strong> Antes de aplicar cualquier modelo, se realizará una exhaustiva preparación de los datos, que incluirá limpieza, normalización y selección de características relevantes.</p></li>
+<li><p><strong>División de datos:</strong> El conjunto de datos se dividirá en conjuntos de entrenamiento y prueba para evaluar la capacidad de generalización de cada modelo.</p></li>
+<li><p><strong>Entrenamiento de modelos:</strong> Se entrenarán todos los modelos mencionados anteriormente en el conjunto de entrenamiento.</p></li>
+<li><p><strong>Evaluación de modelos:</strong> Se utilizarán métricas de evaluación adecuadas para cada tipo de modelo (por ejemplo, precisión, F1-score, error cuadrático medio, etc.) en el conjunto de prueba para comparar el rendimiento de cada modelo.</p></li>
+<li><p><strong>Ajuste de hiperparámetros:</strong> Se ajustarán los hiperparámetros de los modelos para optimizar su rendimiento.</p></li>
+<li><p><strong>Selección del mejor modelo:</strong> Se seleccionará el modelo que demuestre el mejor rendimiento en términos de métricas de evaluación específicas y se validará su capacidad de segmentación en un conjunto de datos independiente si es posible.</p></li>
+<li><p><strong>Implementación en producción:</strong> Una vez seleccionado el mejor modelo, se implementará en la producción para llevar a cabo la segmentación de clientes de manera efectiva.</p></li>
+<li><p><strong>Evaluación continua:</strong> Se realizará un seguimiento continuo del modelo en producción para garantizar su eficacia a lo largo del tiempo y se considerarán ajustes si es necesario.</p></li>
+</ul>
 <p>En resumen, esta propuesta busca encontrar el modelo de segmentación más efectivo a través de una evaluación exhaustiva de varios algoritmos de aprendizaje de máquina. La elección del modelo adecuado será fundamental para optimizar la personalización de las estrategias de marketing y mejorar la toma de decisiones empresariales.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="coleccion-y-preparacion-de-datos">
-<h1>Colección y Preparación de datos<a class="headerlink" href="#coleccion-y-preparacion-de-datos" title="Permalink to this heading">#</a></h1>
+<section id="coleccion-y-preparacion-de-datos-eda">
+<h2>Colección y Preparación de datos - EDA<a class="headerlink" href="#coleccion-y-preparacion-de-datos-eda" title="Permalink to this heading">#</a></h2>
 <p>Los datos se obtienen a partir de una consulta que se raliza directamente en la base de datos. Para poder evaluar la segmentación, los Clientes deben cumplir los siguientes requerimientos:</p>
 <ul class="simple">
 <li><p>Haber realizado compras en los últimos dos años.</p></li>
@@ -755,13 +778,13 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c0110386d4850feb26bc5f3add24e5ab77fbb42d558ed298aed85442bb2ece49.png" src="_images/c0110386d4850feb26bc5f3add24e5ab77fbb42d558ed298aed85442bb2ece49.png" />
+<img alt="_images/c372a0ac864bca6ed2c4d095bfa0f1ace6553618ad2118cee4c7c5ee06c1584b.png" src="_images/c372a0ac864bca6ed2c4d095bfa0f1ace6553618ad2118cee4c7c5ee06c1584b.png" />
 </div>
 </div>
 <p>Realizamos un análisis a las variables del Dataframe:
 <strong>Edad</strong>: Se puede verificar el promedio de los usuarios que compran, teniendo un media de 56 años, podmeos observar datos atípicos como la edad máxima de 124 años.
 <strong>Estrato</strong>: La gran mayoría de usuarios se concentra en los estratos 1 y 2.
-<strong>Recency</strong>: Tiene una Recencia entre 0 y 103 agrupandose en 20 - 40.
+<strong>Recency</strong>: Tengo una Recencia entre 0 y 103 agrupandose en 20 - 40.
 <strong>Frecuency</strong>: Se agrupan entre 1 - 4, teniendo datos atípicos fuera de la media.
 <strong>Monetario</strong>: Se agrupan entre 2M - 4M, teniendo datos atípicos fuera de la media.</p>
 <div class="cell docutils container">
@@ -773,19 +796,19 @@ dtype: float64
 
 <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">num_cols</span><span class="p">:</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Boxplot&#39;</span><span class="p">)</span>  
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b86965639a7657b6af3989b64bf6e4f5c8f6a89b78608a059004c6d876313af5.png" src="_images/b86965639a7657b6af3989b64bf6e4f5c8f6a89b78608a059004c6d876313af5.png" />
-<img alt="_images/ac9bcdc72ddfcd1950669b85231635a232deb402c2ddb37f263dd67b28a7fd2c.png" src="_images/ac9bcdc72ddfcd1950669b85231635a232deb402c2ddb37f263dd67b28a7fd2c.png" />
-<img alt="_images/5cce7e8c36ea0957a0cbff7fde2df5a730e60453a173ae1b2ec6034f186c365d.png" src="_images/5cce7e8c36ea0957a0cbff7fde2df5a730e60453a173ae1b2ec6034f186c365d.png" />
-<img alt="_images/2722def81851a12a430b9a42a5c8632780145de93d56f746dd7c98dcd343bf27.png" src="_images/2722def81851a12a430b9a42a5c8632780145de93d56f746dd7c98dcd343bf27.png" />
-<img alt="_images/98971263998e8d20c1bf6d9908cb0ac83686e38ec7b79e37eff2d733b06c7a1f.png" src="_images/98971263998e8d20c1bf6d9908cb0ac83686e38ec7b79e37eff2d733b06c7a1f.png" />
-<img alt="_images/d6351e44bffea558019207f28bda1c937c43fac3b5ca6152dba8eeeb5611fc9a.png" src="_images/d6351e44bffea558019207f28bda1c937c43fac3b5ca6152dba8eeeb5611fc9a.png" />
+<img alt="_images/80c569a2482152f3648985744c924918ea235d992b2db70c76dbe2f89be329c9.png" src="_images/80c569a2482152f3648985744c924918ea235d992b2db70c76dbe2f89be329c9.png" />
+<img alt="_images/5eadf27c1a5f8e32bebd1f5eb4329fbd25dc3f438564186f68b73207f936a3ec.png" src="_images/5eadf27c1a5f8e32bebd1f5eb4329fbd25dc3f438564186f68b73207f936a3ec.png" />
+<img alt="_images/82078e443da2c5762c6e5611afedb30d38bc9e14141b7f729f4e3f2e597bced6.png" src="_images/82078e443da2c5762c6e5611afedb30d38bc9e14141b7f729f4e3f2e597bced6.png" />
+<img alt="_images/07e050730ae1d95214f84948ade218695629b91c15c66190dd0b6426f8e6cf62.png" src="_images/07e050730ae1d95214f84948ade218695629b91c15c66190dd0b6426f8e6cf62.png" />
+<img alt="_images/8b8c20cc436f555bc670d2fc8f3484594c28ee67d513c0234ebe7c4b9c9ac93b.png" src="_images/8b8c20cc436f555bc670d2fc8f3484594c28ee67d513c0234ebe7c4b9c9ac93b.png" />
+<img alt="_images/3349f6a2c1cbe1650d63fefaa63a4c0be219ab7a7ab9ce44d5c2d69975c90cf0.png" src="_images/3349f6a2c1cbe1650d63fefaa63a4c0be219ab7a7ab9ce44d5c2d69975c90cf0.png" />
 </div>
 </div>
 <p>Se analiza la distribución de usuarios por Departamento, obteniendo la mayor cantidad de usuarios en Atlántico.</p>
@@ -881,19 +904,19 @@ dtype: float64
 <span class="n">rfrecuencia</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Recency&#39;</span><span class="p">]</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">rfrecuencia</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">48</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Separador: Recency &lt; 48&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">48</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Separador: Recency &lt; 48&#39;</span><span class="p">)</span> 
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Recency&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cantidad de Usuarios&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de Recencias en Clientes&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">48</span><span class="p">,</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">()[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;Línea 48 Meses, división usuarios activos con inactivos&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">48</span><span class="p">,</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">()[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;Línea 48 Meses, división usuarios activos con inactivos&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f0ae19584245a984438b7239b038295d0cbde5054a2f902b3cda8a3edf594f2a.png" src="_images/f0ae19584245a984438b7239b038295d0cbde5054a2f902b3cda8a3edf594f2a.png" />
+<img alt="_images/b15f68953c1048919ee49e1e4d7c58a9459103ac47e7c5c6f3bad163c75b7347.png" src="_images/b15f68953c1048919ee49e1e4d7c58a9459103ac47e7c5c6f3bad163c75b7347.png" />
 </div>
 </div>
 <p>Distirbución de Clientes por Frequency, tenemos una distribución asimétrica hacia la izquierda. Con datos concentrados entre 2 - 5.</p>
@@ -949,14 +972,14 @@ Con el análisis bivariado podemos comprender cómo se relacionan las variables 
 
 <span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">bivar</span><span class="p">:</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-    <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Scatterplot de </span><span class="si">{</span><span class="n">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> vs </span><span class="si">{</span><span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
  
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-    <span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">line_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;blue&quot;</span><span class="p">})</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">line_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;blue&quot;</span><span class="p">})</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Regplot de </span><span class="si">{</span><span class="n">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> vs </span><span class="si">{</span><span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
@@ -965,14 +988,1347 @@ Con el análisis bivariado podemos comprender cómo se relacionan las variables 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fd8598945c911d8760465a409669f329bcd1e33a405ed56198f01b2288fd958f.png" src="_images/fd8598945c911d8760465a409669f329bcd1e33a405ed56198f01b2288fd958f.png" />
-<img alt="_images/5409fffa22b68a2f6739100e63010514a516e726cbab58f948be292100d44fb3.png" src="_images/5409fffa22b68a2f6739100e63010514a516e726cbab58f948be292100d44fb3.png" />
-<img alt="_images/1e149807d6bcde941e552af1b0d9e8f9bc74f040380d505fb829c1aa5c377493.png" src="_images/1e149807d6bcde941e552af1b0d9e8f9bc74f040380d505fb829c1aa5c377493.png" />
-<img alt="_images/c68bd0f5fe1a09b9952791b0daf5a98a27712273e06e1eb7de3ab32ce4aab7cb.png" src="_images/c68bd0f5fe1a09b9952791b0daf5a98a27712273e06e1eb7de3ab32ce4aab7cb.png" />
-<img alt="_images/ef723d8e2ce6acedce7a7340143b10014c245ecb03cb0446383bd1319bdc606f.png" src="_images/ef723d8e2ce6acedce7a7340143b10014c245ecb03cb0446383bd1319bdc606f.png" />
-<img alt="_images/eccb46f7760a3dee06011a6e5cc6ed3c64c80b07888d120691ed8428c115efab.png" src="_images/eccb46f7760a3dee06011a6e5cc6ed3c64c80b07888d120691ed8428c115efab.png" />
+<img alt="_images/7717112325a3c678621098b7e34102b653a768b3b24f68dd6cc11da19f838879.png" src="_images/7717112325a3c678621098b7e34102b653a768b3b24f68dd6cc11da19f838879.png" />
+<img alt="_images/0e0e661bef449ac09b3071de2156b8de746df330990e087e3a71a6a663c5a5ee.png" src="_images/0e0e661bef449ac09b3071de2156b8de746df330990e087e3a71a6a663c5a5ee.png" />
+<img alt="_images/98814662e67c0c5f67d597dbe7d4cc87d308fdf8c9075fde5c85e32be1ea9061.png" src="_images/98814662e67c0c5f67d597dbe7d4cc87d308fdf8c9075fde5c85e32be1ea9061.png" />
+<img alt="_images/e6d585aed32c4eb062e1d508e266767ac38a0fc12f8dc90faa49828f05c626a6.png" src="_images/e6d585aed32c4eb062e1d508e266767ac38a0fc12f8dc90faa49828f05c626a6.png" />
+<img alt="_images/baf7c359d72183779aa0577c8826afa268af40432be2a1f2418e2dba71dc567b.png" src="_images/baf7c359d72183779aa0577c8826afa268af40432be2a1f2418e2dba71dc567b.png" />
+<img alt="_images/678b04c868cdcebe7d60a16096931a552476e37b89cbddb30c85bcf01c048a4c.png" src="_images/678b04c868cdcebe7d60a16096931a552476e37b89cbddb30c85bcf01c048a4c.png" />
 </div>
 </div>
+<p>Dividimos el conjunto de datos en dos partes:</p>
+<ul class="simple">
+<li><p>Usuarios Activos: Aquellos que tienen una Recencia menor o igual a 48 meses.</p></li>
+<li><p>Usuarios Inactivos: Aquellos con una Recencia mayor a 48 meses.</p></li>
+</ul>
+<p>Esta distribución es importante porque vamos a analizar la segmentación de los usuarios Activos, ya que los Inactivos son considerados un segmento más y para poder identificarlos no es necesario ejecutar un modelo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_activos</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Recency&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">48</span><span class="p">]</span>
+<span class="n">df_inactivos</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Recency&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">48</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="escalamiento-de-variables">
+<h2>Escalamiento de Variables<a class="headerlink" href="#escalamiento-de-variables" title="Permalink to this heading">#</a></h2>
+<p>Las variables Frecuencia, y Monetario se escalan en un rango discreto de 1 a 5, 1 siendo el mas bajo, y 5 siendo el mas alto. Esto se hace por medio de segmentación en cuantiles (20%, 40%, 60%, 80%, 100%).</p>
+<p>La variable Recencia se escala, similar a Frecuencia y Monetario, en un rango discreto de 1 a 5, 1 siendo el mas reciente, y 5 siendo el menos reciente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="c1">#Calcular cuantiles</span>
+<span class="n">cuantiles_frequency</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">df_activos</span><span class="p">[</span><span class="s2">&quot;Frequency&quot;</span><span class="p">],</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+<span class="n">cuantiles_monetario</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">df_activos</span><span class="p">[</span><span class="s2">&quot;Monetario&quot;</span><span class="p">],</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+
+<span class="c1"># Define una función para escalar los valores</span>
+<span class="k">def</span> <span class="nf">escalar</span><span class="p">(</span><span class="n">valor</span><span class="p">,</span> <span class="n">cuantiles</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">valor</span> <span class="o">&lt;=</span> <span class="n">cuantiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">valor</span> <span class="o">&lt;=</span> <span class="n">cuantiles</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="n">valor</span> <span class="o">&lt;=</span> <span class="n">cuantiles</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="mi">3</span>
+    <span class="k">elif</span> <span class="n">valor</span> <span class="o">&lt;=</span> <span class="n">cuantiles</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="mi">4</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">5</span>
+
+<span class="c1"># Aplica la función a las columnas correspondientes</span>
+<span class="n">df_activos</span><span class="p">[</span><span class="s2">&quot;Frequency_Scaled&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_activos</span><span class="p">[</span><span class="s2">&quot;Frequency&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">escalar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">cuantiles_frequency</span><span class="p">))</span>
+<span class="n">df_activos</span><span class="p">[</span><span class="s2">&quot;Monetario_Scaled&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_activos</span><span class="p">[</span><span class="s2">&quot;Monetario&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">escalar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">cuantiles_monetario</span><span class="p">))</span>
+
+<span class="c1">#Calcular cuantiles</span>
+<span class="n">cuantiles_recency</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">df_activos</span><span class="p">[</span><span class="s2">&quot;Recency&quot;</span><span class="p">],</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">escalar_recency</span><span class="p">(</span><span class="n">valor</span><span class="p">,</span> <span class="n">cuantiles</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">valor</span> <span class="o">&lt;=</span> <span class="n">cuantiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">valor</span> <span class="o">&lt;=</span> <span class="n">cuantiles</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="n">valor</span> <span class="o">&lt;=</span> <span class="n">cuantiles</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="mi">3</span>
+    <span class="k">elif</span> <span class="n">valor</span> <span class="o">&lt;=</span> <span class="n">cuantiles</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="mi">4</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">5</span>
+<span class="n">df_activos</span><span class="p">[</span><span class="s2">&quot;Recency_Scaled&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_activos</span><span class="p">[</span><span class="s2">&quot;Recency&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">escalar_recency</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">cuantiles_recency</span><span class="p">))</span>    
+</pre></div>
+</div>
+</div>
+</div>
+<p>Realizamos el mismo ejercicio para los usuarios Inactivos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="c1">#Calcular cuantiles</span>
+<span class="n">cuantiles_frequency</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">df_inactivos</span><span class="p">[</span><span class="s2">&quot;Frequency&quot;</span><span class="p">],</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+<span class="n">cuantiles_monetario</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">df_inactivos</span><span class="p">[</span><span class="s2">&quot;Monetario&quot;</span><span class="p">],</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+
+<span class="c1"># Define una función para escalar los valores</span>
+<span class="k">def</span> <span class="nf">escalar</span><span class="p">(</span><span class="n">valor</span><span class="p">,</span> <span class="n">cuantiles</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">valor</span> <span class="o">&lt;=</span> <span class="n">cuantiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">valor</span> <span class="o">&lt;=</span> <span class="n">cuantiles</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="n">valor</span> <span class="o">&lt;=</span> <span class="n">cuantiles</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="mi">3</span>
+    <span class="k">elif</span> <span class="n">valor</span> <span class="o">&lt;=</span> <span class="n">cuantiles</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="mi">4</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">5</span>
+
+<span class="c1"># Aplica la función a las columnas correspondientes</span>
+<span class="n">df_inactivos</span><span class="p">[</span><span class="s2">&quot;Frequency_Scaled&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_inactivos</span><span class="p">[</span><span class="s2">&quot;Frequency&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">escalar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">cuantiles_frequency</span><span class="p">))</span>
+<span class="n">df_inactivos</span><span class="p">[</span><span class="s2">&quot;Monetario_Scaled&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_inactivos</span><span class="p">[</span><span class="s2">&quot;Monetario&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">escalar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">cuantiles_monetario</span><span class="p">))</span>
+
+<span class="c1">#Calcular cuantiles</span>
+<span class="n">cuantiles_recency</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">df_inactivos</span><span class="p">[</span><span class="s2">&quot;Recency&quot;</span><span class="p">],</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">escalar_recency</span><span class="p">(</span><span class="n">valor</span><span class="p">,</span> <span class="n">cuantiles</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">valor</span> <span class="o">&lt;=</span> <span class="n">cuantiles</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">valor</span> <span class="o">&lt;=</span> <span class="n">cuantiles</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="n">valor</span> <span class="o">&lt;=</span> <span class="n">cuantiles</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="mi">3</span>
+    <span class="k">elif</span> <span class="n">valor</span> <span class="o">&lt;=</span> <span class="n">cuantiles</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="mi">4</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">5</span>
+<span class="n">df_inactivos</span><span class="p">[</span><span class="s2">&quot;Recency_Scaled&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_inactivos</span><span class="p">[</span><span class="s2">&quot;Recency&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">escalar_recency</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">cuantiles_recency</span><span class="p">))</span>   
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="evaluacion-de-modelos">
+<h1>Evaluación de Modelos<a class="headerlink" href="#evaluacion-de-modelos" title="Permalink to this heading">#</a></h1>
+<section id="k-means-modelo-no-supervisado">
+<h2>K-MEANS - Modelo No Supervisado<a class="headerlink" href="#k-means-modelo-no-supervisado" title="Permalink to this heading">#</a></h2>
+<p>El objetivo principal del algoritmo K-Means es agrupar datos similares en clusters o grupos. Los clusters son conjuntos de puntos de datos que son similares entre sí en términos de características. Es importante destacar que K-Means no asigna etiquetas a los puntos de datos. Simplemente agrupa los datos en clusters basados en similitud. En este caso, se realiza una asignación dependiendo el número de cluster. Sin embargo, se utilizarán técnicas de clasificación supervisada como regresión logística, máquinas de soporte vectorial (SVM), árboles de decisión, entre otros.
+<img alt="imagen.jpg" src="_images/6.jpeg" /></p>
+<p>Con los datos escalados, se procede a crear y entrenar el Modelo K-means para el conjunto de datos de <strong>Usuarios Activos</strong>. Se crea un objeto, en el cual se define el número de Clusters a crear (4).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">silhouette_score</span>
+
+<span class="c1"># Seleccionamos las columnas</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df_activos</span><span class="p">[[</span><span class="s1">&#39;Frequency_Scaled&#39;</span><span class="p">,</span> <span class="s1">&#39;Monetario_Scaled&#39;</span><span class="p">,</span> <span class="s1">&#39;Recency_Scaled&#39;</span><span class="p">]]</span>
+
+<span class="c1"># Se crea un objeto K-Means con el número de clusters</span>
+<span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># Se entrena el modelo K-Means</span>
+<span class="n">kmeans</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># Se asinga un cluster a cada punto de datos</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span>
+
+<span class="c1"># Agregamos las etiquetas de cluster al DataFrame original</span>
+<span class="n">df_activos</span><span class="p">[</span><span class="s1">&#39;Cluster&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">labels</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="kmeans2d.png" src="attachment:kmeans2d.png" /></p>
+<p>A continuación procedemos con la visualización de los Clusters creados por el modelo. Se crea un gráfico en 3D donde se pueden evidenciar claramente cada uno de los clusters creados. Tenemos 4 para este ejercicio, identificados con color azul, amarillo, morado y verde.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualizar los resultados del clustering</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df_activos</span><span class="p">[</span><span class="s1">&#39;Frequency_Scaled&#39;</span><span class="p">],</span> <span class="n">df_activos</span><span class="p">[</span><span class="s1">&#39;Monetario_Scaled&#39;</span><span class="p">],</span> <span class="n">df_activos</span><span class="p">[</span><span class="s1">&#39;Recency_Scaled&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Recency_Scaled&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Monetario_Scaled&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;Frequency_Scaled&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Resultados del Clustering con K-Means&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="imagen.jpg" src="_images/7.jpeg" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_activos</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Identificacion</th>
+      <th>Departamento</th>
+      <th>Localidad</th>
+      <th>Fecha_Nacimiento</th>
+      <th>Edad</th>
+      <th>Genero</th>
+      <th>Estrato</th>
+      <th>Recency</th>
+      <th>Frequency</th>
+      <th>Monetario</th>
+      <th>Frequency_Scaled</th>
+      <th>Monetario_Scaled</th>
+      <th>Recency_Scaled</th>
+      <th>Cluster</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>35993.0</td>
+      <td>ATLANTICO</td>
+      <td>BARRANQUILLA</td>
+      <td>18/10/1931</td>
+      <td>93</td>
+      <td>Masculino</td>
+      <td>2</td>
+      <td>5</td>
+      <td>4</td>
+      <td>475000</td>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>71696.0</td>
+      <td>ATLANTICO</td>
+      <td>BARRANQUILLA</td>
+      <td>13/10/1930</td>
+      <td>94</td>
+      <td>Masculino</td>
+      <td>4</td>
+      <td>47</td>
+      <td>1</td>
+      <td>141900</td>
+      <td>1</td>
+      <td>1</td>
+      <td>5</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>84984.0</td>
+      <td>CESAR</td>
+      <td>VALLEDUPAR</td>
+      <td>10/11/1931</td>
+      <td>93</td>
+      <td>Femenino</td>
+      <td>5</td>
+      <td>16</td>
+      <td>3</td>
+      <td>476300</td>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>93091.0</td>
+      <td>MAGDALENA</td>
+      <td>SANTA MARTA (MAG)</td>
+      <td>11/12/1945</td>
+      <td>79</td>
+      <td>Masculino</td>
+      <td>4</td>
+      <td>48</td>
+      <td>1</td>
+      <td>3292900</td>
+      <td>1</td>
+      <td>2</td>
+      <td>5</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>120698.0</td>
+      <td>ATLANTICO</td>
+      <td>BARRANQUILLA</td>
+      <td>10/06/1933</td>
+      <td>92</td>
+      <td>Masculino</td>
+      <td>5</td>
+      <td>28</td>
+      <td>3</td>
+      <td>420000</td>
+      <td>3</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Como se mencionó al inicio, el modelo K-Means es ideal para agrupar los datos en clusters pero no asigna etiquetas. En este caso, procederemos a asignar manualmente una categoría a cada uno de los segmentos con el fin de evaluar más adelante modelos supervisados que nos puedan entregar las etiquetas y así poder comparar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Se asignan las etiquetas de clasificación</span>
+<span class="k">def</span> <span class="nf">asignaretiqueta</span><span class="p">(</span><span class="n">cluster</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">cluster</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Nuevo&quot;</span>
+    <span class="k">elif</span> <span class="n">cluster</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Bronce&quot;</span>
+    <span class="k">elif</span> <span class="n">cluster</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Plata&quot;</span>
+    <span class="k">elif</span> <span class="n">cluster</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Diamante&quot;</span>
+
+<span class="n">df_activos</span><span class="p">[</span><span class="s1">&#39;Segmento&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_activos</span><span class="p">[</span><span class="s1">&#39;Cluster&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">asignaretiqueta</span><span class="p">)</span>
+<span class="n">df_activos</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Identificacion</th>
+      <th>Departamento</th>
+      <th>Localidad</th>
+      <th>Fecha_Nacimiento</th>
+      <th>Edad</th>
+      <th>Genero</th>
+      <th>Estrato</th>
+      <th>Recency</th>
+      <th>Frequency</th>
+      <th>Monetario</th>
+      <th>Frequency_Scaled</th>
+      <th>Monetario_Scaled</th>
+      <th>Recency_Scaled</th>
+      <th>Cluster</th>
+      <th>Segmento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>35993.0</td>
+      <td>ATLANTICO</td>
+      <td>BARRANQUILLA</td>
+      <td>18/10/1931</td>
+      <td>93</td>
+      <td>Masculino</td>
+      <td>2</td>
+      <td>5</td>
+      <td>4</td>
+      <td>475000</td>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>Plata</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>71696.0</td>
+      <td>ATLANTICO</td>
+      <td>BARRANQUILLA</td>
+      <td>13/10/1930</td>
+      <td>94</td>
+      <td>Masculino</td>
+      <td>4</td>
+      <td>47</td>
+      <td>1</td>
+      <td>141900</td>
+      <td>1</td>
+      <td>1</td>
+      <td>5</td>
+      <td>0</td>
+      <td>Nuevo</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>84984.0</td>
+      <td>CESAR</td>
+      <td>VALLEDUPAR</td>
+      <td>10/11/1931</td>
+      <td>93</td>
+      <td>Femenino</td>
+      <td>5</td>
+      <td>16</td>
+      <td>3</td>
+      <td>476300</td>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0</td>
+      <td>Nuevo</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>93091.0</td>
+      <td>MAGDALENA</td>
+      <td>SANTA MARTA (MAG)</td>
+      <td>11/12/1945</td>
+      <td>79</td>
+      <td>Masculino</td>
+      <td>4</td>
+      <td>48</td>
+      <td>1</td>
+      <td>3292900</td>
+      <td>1</td>
+      <td>2</td>
+      <td>5</td>
+      <td>0</td>
+      <td>Nuevo</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>120698.0</td>
+      <td>ATLANTICO</td>
+      <td>BARRANQUILLA</td>
+      <td>10/06/1933</td>
+      <td>92</td>
+      <td>Masculino</td>
+      <td>5</td>
+      <td>28</td>
+      <td>3</td>
+      <td>420000</td>
+      <td>3</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+      <td>Nuevo</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>El conjunto de Datos de Usuarios Inactivos no se procesa bajo el modelo de K-Means porque este grupo de usuarios ya es considerado un Cluster. Se Prodece a modificar el dataframe, agregando manualmente las columnas Cluster y Segmento con el fin de poder unificar este dataframe con el de usuarios Activos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_inactivos</span><span class="p">[</span><span class="s1">&#39;Cluster&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;4&#39;</span>
+<span class="n">df_inactivos</span><span class="p">[</span><span class="s1">&#39;Segmento&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Inactivo&#39;</span>
+<span class="n">df_inactivos</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Identificacion</th>
+      <th>Departamento</th>
+      <th>Localidad</th>
+      <th>Fecha_Nacimiento</th>
+      <th>Edad</th>
+      <th>Genero</th>
+      <th>Estrato</th>
+      <th>Recency</th>
+      <th>Frequency</th>
+      <th>Monetario</th>
+      <th>Frequency_Scaled</th>
+      <th>Monetario_Scaled</th>
+      <th>Recency_Scaled</th>
+      <th>Cluster</th>
+      <th>Segmento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>20888.0</td>
+      <td>ATLANTICO</td>
+      <td>BARRANQUILLA</td>
+      <td>9/03/1928</td>
+      <td>97</td>
+      <td>Masculino</td>
+      <td>6</td>
+      <td>70</td>
+      <td>2</td>
+      <td>204000</td>
+      <td>4</td>
+      <td>1</td>
+      <td>3</td>
+      <td>4</td>
+      <td>Inactivo</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>25220.0</td>
+      <td>ATLANTICO</td>
+      <td>BARRANQUILLA</td>
+      <td>23/04/1953</td>
+      <td>72</td>
+      <td>Masculino</td>
+      <td>5</td>
+      <td>92</td>
+      <td>1</td>
+      <td>1443498</td>
+      <td>1</td>
+      <td>2</td>
+      <td>5</td>
+      <td>4</td>
+      <td>Inactivo</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>31903.0</td>
+      <td>CESAR</td>
+      <td>VALLEDUPAR</td>
+      <td>18/05/1927</td>
+      <td>98</td>
+      <td>Femenino</td>
+      <td>6</td>
+      <td>97</td>
+      <td>1</td>
+      <td>1555569</td>
+      <td>1</td>
+      <td>2</td>
+      <td>5</td>
+      <td>4</td>
+      <td>Inactivo</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>35796.0</td>
+      <td>ATLANTICO</td>
+      <td>BARRANQUILLA</td>
+      <td>9/02/1928</td>
+      <td>97</td>
+      <td>Masculino</td>
+      <td>6</td>
+      <td>82</td>
+      <td>2</td>
+      <td>251999</td>
+      <td>4</td>
+      <td>1</td>
+      <td>4</td>
+      <td>4</td>
+      <td>Inactivo</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>37332.0</td>
+      <td>ATLANTICO</td>
+      <td>BARRANQUILLA</td>
+      <td>29/06/1936</td>
+      <td>89</td>
+      <td>Masculino</td>
+      <td>4</td>
+      <td>79</td>
+      <td>1</td>
+      <td>122000</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+      <td>4</td>
+      <td>Inactivo</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Unificamos ambos dataframes para otener un solo conjunto de datos. Y validar todos los segmentos obtenidos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_activos</span><span class="p">,</span> <span class="n">df_inactivos</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Obtenemos la siguiente distribución de usuarios por segmento, donde se evidencia que los Usuarios inativos tienen una distribución mucho mayor. Esto es clave para que el área de mercadeo implemente estrategias que incentiven a los usuarios a hacer compras. Los usuarios Diamante y  distribución muy similar con aproximado 55mil usuarios y los usurios Nuevos y Plata también se comportan muy parecido con un aproximado de 87mil usuarios.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">gfrecuencia</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Segmento&#39;</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">gfrecuencia</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span> 
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Segmento&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cantidad de Usuarios&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución x Segmentos&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f243c3c062aba63c3bc9132573d8b128fedcafb4ca77dce574f83eb8fe3fef30.png" src="_images/f243c3c062aba63c3bc9132573d8b128fedcafb4ca77dce574f83eb8fe3fef30.png" />
+</div>
+</div>
+<p>Finalmente, obtenemos un resumen de los datos por segmento. Estos datos proporcionan información sobre diferentes segmentos de usuarios, incluyendo el número de usuarios, cuán recientes son sus interacciones, con qué frecuencia interactúan y cuál es su valor monetario promedio. Estos detalles son valiosos para la segmentación de clientes y la toma de decisiones comerciales.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">Tabla</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Segmento&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+    <span class="s1">&#39;Identificacion&#39;</span><span class="p">:</span> <span class="s1">&#39;nunique&#39;</span><span class="p">,</span>  <span class="c1"># Recuento distinto de usuarios</span>
+    <span class="s1">&#39;Recency&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span>            <span class="c1"># Promedio de Recency</span>
+    <span class="s1">&#39;Frequency&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span>          <span class="c1"># Promedio de Frequency</span>
+    <span class="s1">&#39;Monetario&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span>           <span class="c1"># Promedio de Monetario</span>
+<span class="p">})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">Tabla</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Segmento&#39;</span><span class="p">,</span> <span class="s1">&#39;Usuarios&#39;</span><span class="p">,</span> <span class="s1">&#39;Recencia&#39;</span><span class="p">,</span> <span class="s1">&#39;Frecuencia&#39;</span><span class="p">,</span> <span class="s1">&#39;Monetario&#39;</span><span class="p">]</span>
+<span class="n">Tabla</span> <span class="o">=</span> <span class="n">Tabla</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Tabla</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Segmento  Usuarios  Recencia  Frecuencia   Monetario
+0    Bronce     91996      33.0         2.0   2958487.0
+1  Diamante     78768       8.0         2.0   4866385.0
+2  Inactivo    154978      70.0         2.0   2275067.0
+3     Nuevo     47041      29.0         4.0   6954262.0
+4     Plata     63134       7.0         6.0  10132433.0
+</pre></div>
+</div>
+</div>
+</div>
+<section id="analisis-vif">
+<h3>Análisis VIF<a class="headerlink" href="#analisis-vif" title="Permalink to this heading">#</a></h3>
+<p>El VIF ayuda a identificar qué variables están contribuyendo significativamente a la multicolinealidad y, por lo tanto, pueden ser candidatas para su eliminación o combinación con otras variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.outliers_influence</span> <span class="kn">import</span> <span class="n">variance_inflation_factor</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Departamento&#39;</span><span class="p">,</span><span class="s1">&#39;Localidad&#39;</span><span class="p">,</span><span class="s1">&#39;Genero&#39;</span><span class="p">,</span><span class="s1">&#39;Fecha_Nacimiento&#39;</span><span class="p">,</span><span class="s1">&#39;Segmento&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">])</span>
+<span class="n">vif1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">vif1</span><span class="p">[</span><span class="s2">&quot;Variable&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_columns</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">vif1</span><span class="p">[</span><span class="s2">&quot;VIF&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">num_columns</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_columns</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Se identifican las variables con un VIF mayor a 5, y se procede con la eliminación del modelo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">VIF5</span> <span class="o">=</span> <span class="n">vif1</span><span class="p">[</span><span class="n">vif1</span><span class="p">[</span><span class="s2">&quot;VIF&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">VIF5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           Variable        VIF
+1              Edad  13.002166
+3           Recency   7.281547
+4         Frequency  11.371990
+5         Monetario  18.519116
+6  Frequency_Scaled  12.123536
+7  Monetario_Scaled  21.438869
+8    Recency_Scaled   8.060663
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Edad&#39;</span><span class="p">,</span><span class="s1">&#39;Recency&#39;</span><span class="p">,</span><span class="s1">&#39;Frequency&#39;</span><span class="p">,</span><span class="s1">&#39;Monetario&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Cluster&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Cluster&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">,</span> <span class="n">downcast</span><span class="o">=</span><span class="s1">&#39;integer&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>El modelo se aplicará solo a los usuarios Activos, porlo que eliminamos del data frame a todos los ususarios con etiqueta “inactivo” o Cluster 4</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Cluster&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Index: 280939 entries, 0 to 280938
+Data columns (total 6 columns):
+ #   Column            Non-Null Count   Dtype  
+---  ------            --------------   -----  
+ 0   Identificacion    280939 non-null  float64
+ 1   Estrato           280939 non-null  int64  
+ 2   Frequency_Scaled  280939 non-null  int64  
+ 3   Monetario_Scaled  280939 non-null  int64  
+ 4   Recency_Scaled    280939 non-null  int64  
+ 5   Cluster           280939 non-null  int8   
+dtypes: float64(1), int64(4), int8(1)
+memory usage: 13.1 MB
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="modelos-de-clasificacion-supervisados">
+<h2>Modelos De Clasificación Supervisados<a class="headerlink" href="#modelos-de-clasificacion-supervisados" title="Permalink to this heading">#</a></h2>
+<p><strong>K-NN (K-Nearest Neighbors):</strong> Este algoritmo clasifica un punto de datos en función de la mayoría de los puntos de datos cercanos a él. Es especialmente útil para la segmentación basada en similitud.</p>
+<p><img alt="imagen.png" src="_images/2.jpeg" /></p>
+<p><strong>Decision Tree (Árbol de Decisión):</strong> Los árboles de decisión dividen los datos en función de reglas de decisión en forma de un árbol. Son fáciles de interpretar y pueden utilizarse para segmentaciones claras basadas en reglas.</p>
+<p><img alt="imagen.png" src="_images/1.jpeg" /></p>
+<p><strong>Random Forest (Bosque Aleatorio):</strong> Un conjunto de árboles de decisión que trabajan juntos para mejorar la precisión y reducir el sobreajuste. Puede ser útil para una segmentación robusta.</p>
+<p><img alt="imagen.png" src="_images/4.jpeg" /></p>
+<p><strong>XGBoost (Extreme Gradient Boosting):</strong> Un algoritmo de aumento de gradientes extremos que se utiliza para tareas de segmentación y predicción. Es conocido por su alta eficacia y capacidad de manejar grandes conjuntos de datos.</p>
+<p><img alt="imagen.png" src="_images/3.jpeg" /></p>
+<p><strong>AdaBoost Classifier (AdaBoost con Clasificación):</strong> Es un algoritmo de ensamblado que se utiliza principalmente para problemas de clasificación. Se basa en la idea de mejorar el rendimiento de modelos más simples al darles más peso a los ejemplos clasificados incorrectamente en cada iteración. AdaBoost entrena una secuencia de modelos de clasificación débiles (por lo general, árboles de decisión débiles) y los combina para formar un clasificador fuerte.</p>
+<p><img alt="imagen.png" src="_images/5.jpeg" /></p>
+<p>Dividimos el conjunto de datos en dos partes:</p>
+<ol class="arabic simple">
+<li><p>Evaluaremos los datos de Training y test con los primeros 200.000 registros de nuestro Dataframe.</p></li>
+<li><p>Los 82.000 registros restantes se utilizarán para evaluación de modelo.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">200000</span>
+<span class="n">df_subset</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="n">n</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df_subset</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Cluster&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df_subset</span><span class="p">[</span><span class="s1">&#39;Cluster&#39;</span><span class="p">]</span>
+
+<span class="c1"># Separamos el conjunto de datos en Train y Test</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Definimos los modelos a evaluar:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">import</span> <span class="nn">xgboost</span> <span class="k">as</span> <span class="nn">xgb</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">AdaBoostClassifier</span>
+
+<span class="n">knn_model</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">()</span>
+<span class="n">tree_model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">rf_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
+<span class="n">xgb_model</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">()</span>
+<span class="n">adaboost_classifier_model</span> <span class="o">=</span> <span class="n">AdaBoostClassifier</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Utilizamos la libreria de pipelines que facilita la experimentación y garantiza resultados reproducibles y coherentes. Cada pipeline encapsula el flujo de trabajo específico de un modelo, lo que facilita la gestión y la iteración en el desarrollo de modelos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="c1"># Se crean pipelines para cada modelo</span>
+<span class="n">knn_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;scaler&#39;</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">()),</span> 
+    <span class="p">(</span><span class="s1">&#39;knn&#39;</span><span class="p">,</span> <span class="n">knn_model</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">tree_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;tree&#39;</span><span class="p">,</span> <span class="n">tree_model</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">rf_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;rf&#39;</span><span class="p">,</span> <span class="n">rf_model</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">xgb_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;xgb&#39;</span><span class="p">,</span> <span class="n">xgb_model</span><span class="p">)</span>
+<span class="p">])</span>
+<span class="n">adaboost_classifier_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;adaboost_classifier&#39;</span><span class="p">,</span> <span class="n">adaboost_classifier_model</span><span class="p">)</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>La selección adecuada de los hiperparámetros es crucial para obtener un rendimiento óptimo de los modelos. Esto implica comprender cómo afectan los hiperparámetros al comportamiento del modelo, realizar búsquedas sistemáticas para encontrar los valores óptimos y adaptar los hiperparámetros a las características específicas del problema.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+
+<span class="c1"># Se definen los hiperparámetros a buscar para cada modelo</span>
+<span class="n">param_grid_knn</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;knn__n_neighbors&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+    <span class="s1">&#39;knn__weights&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;uniform&#39;</span><span class="p">,</span> <span class="s1">&#39;distance&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">param_grid_tree</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;tree__max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+    <span class="s1">&#39;tree__min_samples_split&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">param_grid_rf</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;rf__n_estimators&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">150</span><span class="p">],</span>
+    <span class="s1">&#39;rf__max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">param_grid_xgb</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;xgb__n_estimators&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span>
+    <span class="s1">&#39;xgb__max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+    <span class="s1">&#39;xgb__learning_rate&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">param_grid_adaboots</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;adaboots__n_estimators&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span>
+    <span class="s1">&#39;adaboots__max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+    <span class="s1">&#39;adaboots__learning_rate&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">param_grid_adaboost_classifier</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;adaboost_classifier__n_estimators&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span>
+    <span class="s1">&#39;adaboost_classifier__learning_rate&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>La búsqueda de hiperparámetros y la validación cruzada son prácticas críticas para desarrollar modelos de aprendizaje automático efectivos y robustos. Ayudan a mejorar el rendimiento, evitar el sobreajuste, optimizar recursos y tomar decisiones basadas en datos al evaluar y seleccionar modelos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Se realiza la búsqueda de hiperparámetros y validación cruzada para cada modelo</span>
+<span class="n">grid_search_knn</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">knn_pipeline</span><span class="p">,</span> <span class="n">param_grid_knn</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">)</span>
+<span class="n">grid_search_tree</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">tree_pipeline</span><span class="p">,</span> <span class="n">param_grid_tree</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">)</span>
+<span class="n">grid_search_rf</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">rf_pipeline</span><span class="p">,</span> <span class="n">param_grid_rf</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">)</span>
+<span class="n">grid_search_xgb</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">xgb_pipeline</span><span class="p">,</span> <span class="n">param_grid_xgb</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">)</span>
+<span class="n">grid_search_adaboost_classifier</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">adaboost_classifier_pipeline</span><span class="p">,</span> <span class="n">param_grid_adaboost_classifier</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Se Ajustan los modelos a los datos de entrenamiento</span>
+<span class="n">grid_search_knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">grid_search_tree</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">grid_search_rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">grid_search_xgb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">grid_search_adaboost_classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-3 {color: black;}#sk-container-id-3 pre{padding: 0;}#sk-container-id-3 div.sk-toggleable {background-color: white;}#sk-container-id-3 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-3 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-3 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-3 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-3 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-3 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-3 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-3 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-3 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-3 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-3 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-3 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-3 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-3 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-3 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-3 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-3 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-3 div.sk-item {position: relative;z-index: 1;}#sk-container-id-3 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-3 div.sk-item::before, #sk-container-id-3 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-3 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-3 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-3 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-3 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-3 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-3 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-3 div.sk-label-container {text-align: center;}#sk-container-id-3 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-3 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-3" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>GridSearchCV(cv=5,
+             estimator=Pipeline(steps=[(&#x27;adaboost_classifier&#x27;,
+                                        AdaBoostClassifier())]),
+             param_grid={&#x27;adaboost_classifier__learning_rate&#x27;: [0.01, 0.1, 0.2],
+                         &#x27;adaboost_classifier__n_estimators&#x27;: [100, 150, 200]},
+             scoring=&#x27;roc_auc&#x27;)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-7" type="checkbox" ><label for="sk-estimator-id-7" class="sk-toggleable__label sk-toggleable__label-arrow">GridSearchCV</label><div class="sk-toggleable__content"><pre>GridSearchCV(cv=5,
+             estimator=Pipeline(steps=[(&#x27;adaboost_classifier&#x27;,
+                                        AdaBoostClassifier())]),
+             param_grid={&#x27;adaboost_classifier__learning_rate&#x27;: [0.01, 0.1, 0.2],
+                         &#x27;adaboost_classifier__n_estimators&#x27;: [100, 150, 200]},
+             scoring=&#x27;roc_auc&#x27;)</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-8" type="checkbox" ><label for="sk-estimator-id-8" class="sk-toggleable__label sk-toggleable__label-arrow">estimator: Pipeline</label><div class="sk-toggleable__content"><pre>Pipeline(steps=[(&#x27;adaboost_classifier&#x27;, AdaBoostClassifier())])</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-9" type="checkbox" ><label for="sk-estimator-id-9" class="sk-toggleable__label sk-toggleable__label-arrow">AdaBoostClassifier</label><div class="sk-toggleable__content"><pre>AdaBoostClassifier()</pre></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">,</span> <span class="n">roc_auc_score</span>
+
+<span class="c1"># Función para calcular y registrar las métricas</span>
+<span class="k">def</span> <span class="nf">evaluate_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">):</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+    <span class="n">precision</span> <span class="o">=</span> <span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
+    <span class="n">recall</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
+    <span class="n">f1</span> <span class="o">=</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
+    <span class="n">auc</span> <span class="o">=</span> <span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">),</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">,</span> <span class="n">multi_class</span><span class="o">=</span><span class="s1">&#39;ovr&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">precision</span><span class="p">,</span> <span class="n">recall</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span> <span class="n">auc</span>
+
+<span class="c1"># Evaluar cada modelo</span>
+<span class="n">knn_metrics</span> <span class="o">=</span> <span class="n">evaluate_model</span><span class="p">(</span><span class="n">grid_search_knn</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">tree_metrics</span> <span class="o">=</span> <span class="n">evaluate_model</span><span class="p">(</span><span class="n">grid_search_tree</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">rf_metrics</span> <span class="o">=</span> <span class="n">evaluate_model</span><span class="p">(</span><span class="n">grid_search_rf</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">xgb_metrics</span> <span class="o">=</span> <span class="n">evaluate_model</span><span class="p">(</span><span class="n">grid_search_xgb</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">adaboost_classifier_metrics</span> <span class="o">=</span> <span class="n">evaluate_model</span><span class="p">(</span><span class="n">grid_search_adaboost_classifier</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Registrar resultados</span>
+<span class="n">results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Modelo&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;K-NN&#39;</span><span class="p">,</span> <span class="s1">&#39;Decision Tree&#39;</span><span class="p">,</span> <span class="s1">&#39;Random Forest&#39;</span><span class="p">,</span> <span class="s1">&#39;XGBoost&#39;</span><span class="p">,</span> <span class="s1">&#39;AdaBoost Classifier&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Precisión&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">knn_metrics</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">tree_metrics</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rf_metrics</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xgb_metrics</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">adaboost_classifier_metrics</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>
+    <span class="s1">&#39;Recall&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">knn_metrics</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">tree_metrics</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">rf_metrics</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">xgb_metrics</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">adaboost_classifier_metrics</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
+    <span class="s1">&#39;F1_Score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">knn_metrics</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">tree_metrics</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">rf_metrics</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">xgb_metrics</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">adaboost_classifier_metrics</span><span class="p">[</span><span class="mi">2</span><span class="p">]],</span>
+    <span class="s1">&#39;AUC&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">knn_metrics</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">tree_metrics</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">rf_metrics</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">xgb_metrics</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">adaboost_classifier_metrics</span><span class="p">[</span><span class="mi">3</span><span class="p">]]</span>
+<span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">results_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                Modelo  Precisión    Recall  F1_Score       AUC
+0                 K-NN   0.999250  0.999250  0.999250  0.999862
+1        Decision Tree   0.881092  0.867900  0.866346  0.979224
+2        Random Forest   1.000000  1.000000  1.000000  1.000000
+3              XGBoost   0.955447  0.954083  0.952559  0.996114
+4  AdaBoost Classifier   0.896991  0.840417  0.850850  0.992349
+</pre></div>
+</div>
+</div>
+</div>
+<p>Graficamos los resultados obtenidos para cada modelo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="c1"># Graficar las métricas de precisión, recall, F1_Score y AUC</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Precisión</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;Modelo&#39;</span><span class="p">],</span> <span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;Precisión&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Precisión&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="c1"># Recall</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;Modelo&#39;</span><span class="p">],</span> <span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;Recall&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Recall&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="c1"># Puntuación F1</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;Modelo&#39;</span><span class="p">],</span> <span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;F1_Score&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;F1_Score&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="c1"># AUC</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;Modelo&#39;</span><span class="p">],</span> <span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;AUC&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;AUC&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="c1"># Ajustar el espaciado entre los gráficos</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="c1"># Mostrar los gráficos</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/169d8210b07ea0152a9d0cb74f0a8dead69b7c7fb394f1b2a4e4f1ea75cf99bd.png" src="_images/169d8210b07ea0152a9d0cb74f0a8dead69b7c7fb394f1b2a4e4f1ea75cf99bd.png" />
+</div>
+</div>
+<p>Como se puede observar K-NN y Random Forest optubieron los mejores puntajes, esto se debe a que son modelos muy ponetentes de clasifiacion, Ademas se ve una gran rendimiento general de cada modelo, lo que puede significar dos cosas, o los modelos estan sobre ajustados, es decir, que aprendieron los datos de mamemoria y cuando se enfrenten a nuevos datos los modelos no tedran un buen rendimiento, o los datos no soy muy complejos por lo que los modelos pueden hallar facilmente una solucion.</p>
+<p>Para evitar eso se realizaron validaciones, que es justamente evaluar el modelo con datos nuevos.</p>
+<p>Se escoge el mejor modelo, según el AUC:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Encuentra el mejor modelo según AUC</span>
+<span class="n">best_model_name</span> <span class="o">=</span> <span class="n">results_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;AUC&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()][</span><span class="s1">&#39;Modelo&#39;</span><span class="p">]</span>
+<span class="n">best_model</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># Encuentra el modelo correspondiente al mejor modelo</span>
+<span class="k">if</span> <span class="n">best_model_name</span> <span class="o">==</span> <span class="s1">&#39;K-NN&#39;</span><span class="p">:</span>
+    <span class="n">best_model</span> <span class="o">=</span> <span class="n">grid_search_knn</span><span class="o">.</span><span class="n">best_estimator_</span>
+<span class="k">elif</span> <span class="n">best_model_name</span> <span class="o">==</span> <span class="s1">&#39;Decision Tree&#39;</span><span class="p">:</span>
+    <span class="n">best_model</span> <span class="o">=</span> <span class="n">grid_search_tree</span><span class="o">.</span><span class="n">best_estimator_</span>
+<span class="k">elif</span> <span class="n">best_model_name</span> <span class="o">==</span> <span class="s1">&#39;Random Forest&#39;</span><span class="p">:</span>
+    <span class="n">best_model</span> <span class="o">=</span> <span class="n">grid_search_rf</span><span class="o">.</span><span class="n">best_estimator_</span>
+<span class="k">elif</span> <span class="n">best_model_name</span> <span class="o">==</span> <span class="s1">&#39;XGBoost&#39;</span><span class="p">:</span>
+    <span class="n">best_model</span> <span class="o">=</span> <span class="n">grid_search_xgb</span><span class="o">.</span><span class="n">best_estimator_</span>
+<span class="k">elif</span> <span class="n">best_model_name</span> <span class="o">==</span> <span class="s1">&#39;AdaBoost Classifier&#39;</span><span class="p">:</span>
+    <span class="n">best_model</span> <span class="o">=</span> <span class="n">grid_search_adaboost_classifier</span><span class="o">.</span><span class="n">best_estimator_</span>
+    
+<span class="n">best_DecisionTree</span> <span class="o">=</span> <span class="n">grid_search_tree</span><span class="o">.</span><span class="n">best_estimator_</span>
+<span class="n">best_Knn</span> <span class="o">=</span> <span class="n">grid_search_knn</span><span class="o">.</span><span class="n">best_estimator_</span>
+<span class="n">best_RandomForest</span> <span class="o">=</span> <span class="n">grid_search_rf</span><span class="o">.</span><span class="n">best_estimator_</span>
+<span class="n">best_XGBoost</span> <span class="o">=</span> <span class="n">grid_search_xgb</span><span class="o">.</span><span class="n">best_estimator_</span>
+<span class="n">best_AdaBoost</span><span class="o">=</span> <span class="n">grid_search_adaboost_classifier</span><span class="o">.</span><span class="n">best_estimator_</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">best_model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pipeline(steps=[(&#39;rf&#39;, RandomForestClassifier())])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como se menciono antes Random Forest (rf) es modelo con mayor puntaje AUC y se selecciono con este codigo previo a la validacion para confirmar si este resultado cambia.</p>
+</section>
+<section id="resultados-obtenidos">
+<h2>Resultados Obtenidos<a class="headerlink" href="#resultados-obtenidos" title="Permalink to this heading">#</a></h2>
+<p>Realizamos validaciones adicionales con un conjunto de datos nuevos, que corresponde a la 2da parte del conjunto de datos que habíamos mencionado al inicio. Se realiza análisis de la curva ROC y la matriz de Confusión para cada uno de los modelos evaluados.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">80939</span><span class="p">)</span>
+
+<span class="n">X_new</span> <span class="o">=</span> <span class="n">test_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Cluster&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y_new</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">&#39;Cluster&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Seleccionamos a quellos datos del data frame original que no se ahbian utilizado y definimso nuestro X_new, como estas variables descriptibas y Y_new como las etiquetas de deben predecir.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">,</span> <span class="n">roc_auc_score</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">auc</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">itertools</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">,</span> <span class="n">roc_auc_score</span>
+
+<span class="n">best_models</span> <span class="o">=</span> <span class="p">[</span><span class="n">best_DecisionTree</span><span class="p">,</span> <span class="n">best_Knn</span><span class="p">,</span> <span class="n">best_RandomForest</span><span class="p">,</span> <span class="n">best_XGBoost</span><span class="p">,</span> <span class="n">best_AdaBoost</span><span class="p">]</span>
+<span class="n">Modelo</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Decision Tree&#39;</span><span class="p">,</span><span class="s1">&#39;K-NN&#39;</span><span class="p">,</span><span class="s1">&#39;Random Forest&#39;</span><span class="p">,</span><span class="s1">&#39;XGBoost&#39;</span><span class="p">,</span><span class="s1">&#39;AdaBoost Classifier&#39;</span><span class="p">]</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">best_models</span><span class="p">):</span>
+    <span class="c1"># Inicializar métricas como None</span>
+    <span class="n">precision_new</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">recall_new</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">f1_new</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">auc_new</span> <span class="o">=</span> <span class="kc">None</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Aplicar el modelo al nuevo conjunto de datos</span>
+        <span class="n">y_pred_new</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new</span><span class="p">)</span>
+
+        <span class="c1"># Calcular las métricas de precisión</span>
+        <span class="n">precision_new</span> <span class="o">=</span> <span class="n">precision_score</span><span class="p">(</span><span class="n">y_new</span><span class="p">,</span> <span class="n">y_pred_new</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
+        <span class="n">recall_new</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_new</span><span class="p">,</span> <span class="n">y_pred_new</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
+        <span class="n">f1_new</span> <span class="o">=</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_new</span><span class="p">,</span> <span class="n">y_pred_new</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Calcular el AUC</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;predict_proba&#39;</span><span class="p">):</span>
+            <span class="n">auc_new</span> <span class="o">=</span> <span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_new</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_new</span><span class="p">),</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">,</span> <span class="n">multi_class</span><span class="o">=</span><span class="s1">&#39;ovr&#39;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error al calcular métricas para </span><span class="si">{</span><span class="n">Modelo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Agrega las métricas al resultado</span>
+    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+        <span class="s1">&#39;Modelo&#39;</span><span class="p">:</span> <span class="n">Modelo</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+        <span class="s1">&#39;Precisión&#39;</span><span class="p">:</span> <span class="n">precision_new</span><span class="p">,</span>
+        <span class="s1">&#39;Recall&#39;</span><span class="p">:</span> <span class="n">recall_new</span><span class="p">,</span>
+        <span class="s1">&#39;F1-Score&#39;</span><span class="p">:</span> <span class="n">f1_new</span><span class="p">,</span>
+        <span class="s1">&#39;AUC&#39;</span><span class="p">:</span> <span class="n">auc_new</span>
+    <span class="p">})</span>
+
+<span class="n">all_metrics_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+<span class="c1"># Resultados</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">all_metrics_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                Modelo  Precisión    Recall  F1-Score       AUC
+0        Decision Tree   0.897056  0.883245  0.882772  0.985135
+1                 K-NN   0.993482  0.993440  0.993449  0.999134
+2        Random Forest   1.000000  1.000000  1.000000  1.000000
+3              XGBoost   0.971835  0.971028  0.969624  0.998285
+4  AdaBoost Classifier   0.920851  0.835815  0.857960  0.995496
+</pre></div>
+</div>
+</div>
+</div>
+<p>Obtenemos los resultados de los modelos entrenados con los primeros datos y ahora validados con los nuevos datos. Vemos como los puntajes bajaron un poco en comparacion a los anteriores pero nada que resulte significante, por lo que es poco probable que los modelos esten sobre ajustados y mucho más logico que las variables no soy muy complejas, por lo que los modelos logran predecir con exito la gran parte de las etiquetas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="c1"># Graficar las métricas de precisión, recall, F1_Score y AUC</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Precisión</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">all_metrics_df</span><span class="p">[</span><span class="s1">&#39;Modelo&#39;</span><span class="p">],</span> <span class="n">all_metrics_df</span><span class="p">[</span><span class="s1">&#39;Precisión&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Precisión&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+
+<span class="c1"># Recall</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">all_metrics_df</span><span class="p">[</span><span class="s1">&#39;Modelo&#39;</span><span class="p">],</span> <span class="n">all_metrics_df</span><span class="p">[</span><span class="s1">&#39;Recall&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Recall&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="c1"># Puntuación F1</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">all_metrics_df</span><span class="p">[</span><span class="s1">&#39;Modelo&#39;</span><span class="p">],</span> <span class="n">all_metrics_df</span><span class="p">[</span><span class="s1">&#39;F1-Score&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;F1-Score&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="c1"># AUC</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">all_metrics_df</span><span class="p">[</span><span class="s1">&#39;Modelo&#39;</span><span class="p">],</span> <span class="n">all_metrics_df</span><span class="p">[</span><span class="s1">&#39;AUC&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;AUC&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="c1"># Ajustar el espaciado entre los gráficos</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="c1"># Mostrar los gráficos</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/274217dc98a3a193eb5d34d8e47add86b016f84b25d983e45c6d92369f1e149b.png" src="_images/274217dc98a3a193eb5d34d8e47add86b016f84b25d983e45c6d92369f1e149b.png" />
+</div>
+</div>
+<p>Graficamos los resultados de los modelos validados con los nuevos datos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">best_models</span> <span class="o">=</span> <span class="p">[</span><span class="n">best_DecisionTree</span><span class="p">,</span> <span class="n">best_Knn</span><span class="p">,</span> <span class="n">best_RandomForest</span><span class="p">,</span> <span class="n">best_XGBoost</span><span class="p">,</span> <span class="n">best_AdaBoost</span><span class="p">]</span>
+<span class="n">Modelo</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Decision Tree&#39;</span><span class="p">,</span> <span class="s1">&#39;K-NN&#39;</span><span class="p">,</span> <span class="s1">&#39;Random Forest&#39;</span><span class="p">,</span> <span class="s1">&#39;XGBoost&#39;</span><span class="p">,</span> <span class="s1">&#39;AdaBoost Classifier&#39;</span><span class="p">]</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">best_models</span><span class="p">):</span>
+ 
+    <span class="n">precision_new</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">recall_new</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">f1_new</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">auc_new</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">confusion</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Se aplica el modelo al nuevo conjunto de datos</span>
+        <span class="n">y_pred_new</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new</span><span class="p">)</span>
+
+        <span class="c1"># Se calculan las métricas de precisión</span>
+        <span class="n">precision_new</span> <span class="o">=</span> <span class="n">precision_score</span><span class="p">(</span><span class="n">y_new</span><span class="p">,</span> <span class="n">y_pred_new</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
+        <span class="n">recall_new</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_new</span><span class="p">,</span> <span class="n">y_pred_new</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
+        <span class="n">f1_new</span> <span class="o">=</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_new</span><span class="p">,</span> <span class="n">y_pred_new</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Se calcula el AUC</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;predict_proba&#39;</span><span class="p">):</span>
+            <span class="n">y_pred_prob</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_new</span><span class="p">)</span>
+            <span class="n">auc_new</span> <span class="o">=</span> <span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_new</span><span class="p">,</span> <span class="n">y_pred_prob</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">,</span> <span class="n">multi_class</span><span class="o">=</span><span class="s1">&#39;ovr&#39;</span><span class="p">)</span>
+            
+            <span class="c1"># Matriz de confusión</span>
+            <span class="n">confusion</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_new</span><span class="p">,</span> <span class="n">y_pred_new</span><span class="p">)</span>
+            
+            <span class="c1"># Grafico de la matriz de confusión</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">confusion</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Matriz de Confusión para </span><span class="si">{</span><span class="n">Modelo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+            <span class="n">classes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y_new</span><span class="p">)</span>
+            <span class="n">tick_marks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">classes</span><span class="p">))</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">tick_marks</span><span class="p">,</span> <span class="n">classes</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">tick_marks</span><span class="p">,</span> <span class="n">classes</span><span class="p">)</span>
+            
+            <span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;d&#39;</span>
+            <span class="n">thresh</span> <span class="o">=</span> <span class="n">confusion</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">/</span> <span class="mf">2.</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">confusion</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">range</span><span class="p">(</span><span class="n">confusion</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])):</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="nb">format</span><span class="p">(</span><span class="n">confusion</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">fmt</span><span class="p">),</span>
+                         <span class="n">horizontalalignment</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+                         <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span> <span class="k">if</span> <span class="n">confusion</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">thresh</span> <span class="k">else</span> <span class="s2">&quot;black&quot;</span><span class="p">)</span>
+            
+            <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Etiqueta Verdadera&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Etiqueta Predicha&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+            
+            
+             <span class="c1"># Curva ROC x Clase</span>
+            <span class="n">n_classes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y_new</span><span class="p">))</span>
+            <span class="n">fpr</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+            <span class="n">tpr</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+            <span class="n">roc_auc</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">class_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_classes</span><span class="p">):</span>
+                <span class="n">fpr</span><span class="p">[</span><span class="n">class_idx</span><span class="p">],</span> <span class="n">tpr</span><span class="p">[</span><span class="n">class_idx</span><span class="p">],</span> <span class="n">_</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_new</span> <span class="o">==</span> <span class="n">class_idx</span><span class="p">,</span> <span class="n">y_pred_prob</span><span class="p">[:,</span> <span class="n">class_idx</span><span class="p">])</span>
+                <span class="n">roc_auc</span><span class="p">[</span><span class="n">class_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">[</span><span class="n">class_idx</span><span class="p">],</span> <span class="n">tpr</span><span class="p">[</span><span class="n">class_idx</span><span class="p">])</span>
+            
+            <span class="c1"># Graficar la curva ROC para cada clase</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+            <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span>
+            <span class="k">for</span> <span class="n">class_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_classes</span><span class="p">):</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">[</span><span class="n">class_idx</span><span class="p">],</span> <span class="n">tpr</span><span class="p">[</span><span class="n">class_idx</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span>
+                         <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;ROC curve (class </span><span class="si">{</span><span class="n">class_idx</span><span class="si">}</span><span class="s1">) (AUC = </span><span class="si">{</span><span class="n">roc_auc</span><span class="p">[</span><span class="n">class_idx</span><span class="p">]</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;navy&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="n">lw</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">])</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tasa de Falsos Positivos&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tasa de Verdaderos Positivos&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Curva ROC para </span><span class="si">{</span><span class="n">Modelo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>            
+            
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error al calcular métricas para </span><span class="si">{</span><span class="n">Modelo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="c1"># Agrega las métricas al resultado</span>
+    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+        <span class="s1">&#39;Modelo&#39;</span><span class="p">:</span> <span class="n">Modelo</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+        <span class="s1">&#39;Precisión&#39;</span><span class="p">:</span> <span class="n">precision_new</span><span class="p">,</span>
+        <span class="s1">&#39;Recall&#39;</span><span class="p">:</span> <span class="n">recall_new</span><span class="p">,</span>
+        <span class="s1">&#39;F1-Score&#39;</span><span class="p">:</span> <span class="n">f1_new</span><span class="p">,</span>
+        <span class="s1">&#39;AUC&#39;</span><span class="p">:</span> <span class="n">auc_new</span><span class="p">,</span>
+        <span class="s1">&#39;Matriz de Confusión&#39;</span><span class="p">:</span> <span class="n">confusion</span>
+    <span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En el codigo de ariba de definen y calculan todas la graficas que se mostratan a continuacion.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_metrics_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="c1"># Resultados</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">all_metrics_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7f7ff5f24e8132ad360b0ddc0b095ba26823ed5c875644f4bd09fcef3e3099b8.png" src="_images/7f7ff5f24e8132ad360b0ddc0b095ba26823ed5c875644f4bd09fcef3e3099b8.png" />
+<img alt="_images/dcfd9006597e4e22997a46a9c9d9c18d07a07746a572735dc4f9ca122b2cc2d5.png" src="_images/dcfd9006597e4e22997a46a9c9d9c18d07a07746a572735dc4f9ca122b2cc2d5.png" />
+<img alt="_images/2a92b7a56208f66a44e13c37f559755ca514dea12379c324361f056060374d85.png" src="_images/2a92b7a56208f66a44e13c37f559755ca514dea12379c324361f056060374d85.png" />
+<img alt="_images/d206c50e465723090488a570355e70e39303d21177b7072b84026de92485db13.png" src="_images/d206c50e465723090488a570355e70e39303d21177b7072b84026de92485db13.png" />
+<img alt="_images/d21bc18896fe03025c1a7fbc6dee2312497cd3d240210b67b594c5086f9cfe20.png" src="_images/d21bc18896fe03025c1a7fbc6dee2312497cd3d240210b67b594c5086f9cfe20.png" />
+<img alt="_images/fa998fe3b64b3a81e232d61523e9e12aa833851819eda29fff4d8a54629aaa32.png" src="_images/fa998fe3b64b3a81e232d61523e9e12aa833851819eda29fff4d8a54629aaa32.png" />
+<img alt="_images/a4537c3e175fc4486bc40af6af439501f4ed0e5002662a3717e935a3f265f94b.png" src="_images/a4537c3e175fc4486bc40af6af439501f4ed0e5002662a3717e935a3f265f94b.png" />
+<img alt="_images/331e1f0f92a27d04fb452fe05c7da9042ab8f2ad799fb8472012634d29dc1b11.png" src="_images/331e1f0f92a27d04fb452fe05c7da9042ab8f2ad799fb8472012634d29dc1b11.png" />
+<img alt="_images/cd8d5f0b9432ea2807051ba2913fd429c9ef91d7a4a216e18af1b2dd0d2172ea.png" src="_images/cd8d5f0b9432ea2807051ba2913fd429c9ef91d7a4a216e18af1b2dd0d2172ea.png" />
+<img alt="_images/e84bb61d9d5304be0b9e5e261227737007f6d8d6bbd66e21981d29dca67443a9.png" src="_images/e84bb61d9d5304be0b9e5e261227737007f6d8d6bbd66e21981d29dca67443a9.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Modelo  Precisión    Recall  F1-Score       AUC  \
+0  XGBoost   0.897056  0.883245  0.882772  0.985135   
+1  XGBoost   0.993482  0.993440  0.993449  0.999134   
+2  XGBoost   1.000000  1.000000  1.000000  1.000000   
+3  XGBoost   0.971835  0.971028  0.969624  0.998285   
+4  XGBoost   0.920851  0.835815  0.857960  0.995496   
+
+                                 Matriz de Confusión  
+0  [[27965, 0, 0, 50], [0, 9732, 1241, 1685], [52...  
+1  [[27852, 0, 15, 148], [4, 12467, 96, 91], [13,...  
+2  [[28015, 0, 0, 0], [0, 12658, 0, 0], [0, 0, 31...  
+3  [[27965, 0, 17, 33], [0, 12451, 207, 0], [0, 0...  
+4  [[22740, 0, 0, 5275], [0, 10766, 207, 1685], [...  
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="resultados">
+<h1>Resultados<a class="headerlink" href="#resultados" title="Permalink to this heading">#</a></h1>
+<p>Describiremos un poco el rendimiento general de los modelos para esto utilizamos las grafica de Matriz de confución la cual tiene en el eje verticar las etiquetas reales del cliente y en el eje horizontal las etiquetas predichas por el modelo. Y para la Curva ROC se tiene en el eje verticar la tasa de verdaderos positivos (por ejemplo cuando un modelo predice que la etiquera es 1 y la etqueta real concuerda) y en el eje horizontal la taza de falsos positivos (por ejemplo cuando un modelo predice que la etiquera es 1 y la etqueta real es diferente), tambien esta una lien azul punteada que muestra el redimiento de un modelo si este funcinara como una moneda, es decir, un modeo que solo acertara el 50% de las veces</p>
+<section id="matriz-de-confucion-modelo-tree">
+<h2>Matriz de confucion Modelo Tree<a class="headerlink" href="#matriz-de-confucion-modelo-tree" title="Permalink to this heading">#</a></h2>
+<p>Estamos viendo las etiquetas reales contra las etiquetas predichas y podemos notar como en la primeta fila el modelo clasifica 28015 clientes (27960 + 50) con la etiqueta 0 pero para 27960 si que les corrspondia esa etiqueta y a los 50 otros les corrspondia la etiqueta 3, siguiendo esta logica para el resto de filas podemos ver que el modelo etiqueta correcta mente a la gran mayoria de clientes, pero aun asi comete muchos fallos al etiquetar 1, 2, y 3, aqui se puede evidenciar algo de sobre ajuste</p>
+<p><img alt="MTree.png" src="_images/MTree.png" /></p>
+</section>
+<section id="matriz-de-confucion-modelo-k-nn">
+<h2>Matriz de confucion Modelo K-nn<a class="headerlink" href="#matriz-de-confucion-modelo-k-nn" title="Permalink to this heading">#</a></h2>
+<p>Comprendiendo que el grafico se entiende de la misma forma que el anterior, vemos muchos menos errores en el caso de este modelo, donde a lo mucho se equivoco etiquentando aproximadamente a 500 clientes</p>
+<p><img alt="MTree.png" src="_images/MKnn.png" /></p>
+</section>
+<section id="matriz-de-confucion-modelo-xg-boost">
+<h2>Matriz de confucion Modelo XG Boost<a class="headerlink" href="#matriz-de-confucion-modelo-xg-boost" title="Permalink to this heading">#</a></h2>
+<p>Podemos ver como este modelo acierta sus predicciones para las primeras 3 etiquetas pero al momento de clasificar la ultima comete muchos errores, esto se debe a que la proporcin de clientes es menor en esta clase y el modelo no sabe acoplarse a eso</p>
+<p><img alt="MXG.png" src="_images/MXG.png" /></p>
+</section>
+<section id="matriz-de-confucion-modelo-ada-boost">
+<h2>Matriz de confucion Modelo ADA Boost<a class="headerlink" href="#matriz-de-confucion-modelo-ada-boost" title="Permalink to this heading">#</a></h2>
+<p>Aqui a diferencia del modelo anterior, clasifica bien a la mayoria de clientes, pero no asigna la etiqueta 3 a mucho clientes que realmente si tienen esta etiquera, puede comprenderse con que trata de mejorar los errores de XG Boost (el modelo anterior) haciendo que clasifique a menos clientes con la etiqueta 3 pero termian excediendoce y no ubica bien a muchos lientes que tienen esta etiqueta</p>
+<p><img alt="MXG.png" src="_images/Mada.png" /></p>
+</section>
+<section id="matriz-de-confucion-modelo-random-forest">
+<h2>Matriz de confucion Modelo Random forest<a class="headerlink" href="#matriz-de-confucion-modelo-random-forest" title="Permalink to this heading">#</a></h2>
+<p>A comparacion de los demas modelo podemos ver como este pedijo el 100% de las etiquetas de forma correcta, sin cometer ni un solo error, demostrando que es mucho mejor que el modelo de Arbol de decicion comprendiendo claramente de que este modelo es mucho más complejo</p>
+<p><img alt="MTree.png" src="_images/MRandom.png" /></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1038,9 +2394,29 @@ Con el análisis bivariado podemos comprender cómo se relacionan las variables 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Propuesta Desarrollada</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metodologia-propuesta">Metodología propuesta:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#coleccion-y-preparacion-de-datos">Colección y Preparación de datos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Propuesta a Desarrollar</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metodologia-propuesta">Metodología propuesta:</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coleccion-y-preparacion-de-datos-eda">Colección y Preparación de datos - EDA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escalamiento-de-variables">Escalamiento de Variables</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluacion-de-modelos">Evaluación de Modelos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k-means-modelo-no-supervisado">K-MEANS - Modelo No Supervisado</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-vif">Análisis VIF</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-clasificacion-supervisados">Modelos De Clasificación Supervisados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados-obtenidos">Resultados Obtenidos</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados">Resultados</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-confucion-modelo-tree">Matriz de confucion Modelo Tree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-confucion-modelo-k-nn">Matriz de confucion Modelo K-nn</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-confucion-modelo-xg-boost">Matriz de confucion Modelo XG Boost</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-confucion-modelo-ada-boost">Matriz de confucion Modelo ADA Boost</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-confucion-modelo-random-forest">Matriz de confucion Modelo Random forest</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>
@@ -1056,7 +2432,7 @@ Con el análisis bivariado podemos comprender cómo se relacionan las variables 
   <div class="footer-item">
     
 <p class="component-author">
-By Andres Vargas Edward Morales
+By Andrés Vargas Humánez & Edward Morales
 </p>
 
   </div>
